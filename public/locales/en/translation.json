@@ -1,7 +1,8 @@
 {
-  "язык": "English",
-  "пример": "Example",
   "главная": "Main page",
   "о сайте": "About us",
-  "сайд": "said"
+  "пример": "Example",
+  "сайд": "said",
+  "страница не найдена": "Page not found",
+  "язык": "English"
 }
