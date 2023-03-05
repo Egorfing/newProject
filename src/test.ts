@@ -1,4 +1,4 @@
-export function SomeFn (arg: number): string {
-  console.log("Hello new Project");
-  return ""
+export function SomeFn(arg: number): string {
+  console.log('Hello new Project')
+  return ''
 }
