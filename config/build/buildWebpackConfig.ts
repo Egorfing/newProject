@@ -1,4 +1,3 @@
-import path from 'path'
 import Webpack from 'webpack'
 import { buildDevServer } from './buildDevServer'
 import { buildLoaders } from './buildLoaders'

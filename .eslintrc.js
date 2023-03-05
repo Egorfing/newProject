@@ -5,7 +5,8 @@ module.exports = {
   },
   extends: [
     'plugin:react/recommended',
-    'standard-with-typescript'
+    'standard-with-typescript',
+    'plugin:i18next/recommended'
   ],
   overrides: [
   ],
@@ -16,7 +17,8 @@ module.exports = {
     tsconfigRootDir: __dirname
   },
   plugins: [
-    'react'
+    'react',
+    'i18next'
   ],
   rules: {
     '@typescript-eslint/space-before-function-paren': 'off',
@@ -28,6 +30,8 @@ module.exports = {
     '@typescript-eslint/no-unused-vars': 'warn',
     '@typescript-eslint/no-floating-promises': 'off',
     '@typescript-eslint/naming-convention': 'off',
-    '@typescript-eslint/prefer-optional-chain': 'off'
+    '@typescript-eslint/prefer-optional-chain': 'off',
+    'i18next/no-literal-string': ['error', { onlyAttribute: ['makrupOnly', 'callees'] }],
+    'max-len': ['error', {ignoreComments: true}]
   }
 }
