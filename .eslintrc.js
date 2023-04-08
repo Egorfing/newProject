@@ -11,7 +11,7 @@ module.exports = {
     project: './tsconfig.json',
     tsconfigRootDir: __dirname
   },
-  plugins: ['react', 'i18next'],
+  plugins: ['react', 'i18next', 'react-hooks'],
   rules: {
     '@typescript-eslint/space-before-function-paren': 'off',
     '@typescript-eslint/consistent-type-imports': 'off',
@@ -30,7 +30,9 @@ module.exports = {
     'max-len': ['error', {
       ignoreComments: true,
       code: 80
-    }]
+    }],
+    "react-hooks/rules-of-hooks": "error", // Checks rules of Hooks
+    "react-hooks/exhaustive-deps": "warn" // Checks effect dependencies
   },
   overrides: [{
     files: ['**/src/**/*.test.{ts,tsx}'],
