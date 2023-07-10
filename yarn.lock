@@ -2575,6 +2575,13 @@
     "regenerator-runtime" "^0.13.7"
     "ts-dedent" "^2.0.0"
 
+"@storybook/csf@^0.0.1":
+  "integrity" "sha512-USTLkZze5gkel8MYCujSRBVIrUQ3YPBrLOx7GNk/0wttvVtlzWXAq9eLbQ4p/NicGxP+3T7KPEMVV//g+yubpw=="
+  "resolved" "https://registry.npmjs.org/@storybook/csf/-/csf-0.0.1.tgz"
+  "version" "0.0.1"
+  dependencies:
+    "lodash" "^4.17.15"
+
 "@storybook/csf@0.0.2--canary.87bc651.0":
   "integrity" "sha512-ajk1Uxa+rBpFQHKrCcTmJyQBXZ5slfwHVEaKlkuFaW77it8RgbPJp/ccna3sgoi8oZ7FkkOyvv1Ve4SmwFqRqw=="
   "resolved" "https://registry.npmjs.org/@storybook/csf/-/csf-0.0.2--canary.87bc651.0.tgz"
@@ -3424,6 +3431,11 @@
   "resolved" "https://registry.npmjs.org/@types/scheduler/-/scheduler-0.16.2.tgz"
   "version" "0.16.2"
 
+"@types/semver@^7.3.12":
+  "integrity" "sha512-G8hZ6XJiHnuhQKR7ZmysCeJWE08o8T0AXtk5darsCaTVsYZhhgUrq53jizaR2FvsoeCwJhlmwTjkXBY5Pn/ZHw=="
+  "resolved" "https://registry.npmjs.org/@types/semver/-/semver-7.5.0.tgz"
+  "version" "7.5.0"
+
 "@types/serve-index@^1.9.1":
   "integrity" "sha512-d/Hs3nWDxNL2xAczmOVZNj92YZCS6RGxfBPjKzuu/XirCgXdpKEb88dYNbrYGint6IVWLNP+yonwVAuRC0T2Dg=="
   "resolved" "https://registry.npmjs.org/@types/serve-index/-/serve-index-1.9.1.tgz"
@@ -3647,6 +3659,20 @@
     "is-glob" "^4.0.3"
     "semver" "^7.3.7"
     "tsutils" "^3.21.0"
+
+"@typescript-eslint/utils@^5.45.0":
+  "integrity" "sha512-mV6O+6VgQmVE6+xzlA91xifndPW9ElFW8vbSF0xCT/czPXVhwDewKila1jOyRwa9AE19zKnrr7Cg5S3pJVrTWQ=="
+  "resolved" "https://registry.npmjs.org/@typescript-eslint/utils/-/utils-5.61.0.tgz"
+  "version" "5.61.0"
+  dependencies:
+    "@eslint-community/eslint-utils" "^4.2.0"
+    "@types/json-schema" "^7.0.9"
+    "@types/semver" "^7.3.12"
+    "@typescript-eslint/scope-manager" "5.61.0"
+    "@typescript-eslint/types" "5.61.0"
+    "@typescript-eslint/typescript-estree" "5.61.0"
+    "eslint-scope" "^5.1.1"
+    "semver" "^7.3.7"
 
 "@typescript-eslint/utils@5.12.1":
   "integrity" "sha512-Qq9FIuU0EVEsi8fS6pG+uurbhNTtoYr4fq8tKjBupsK5Bgbk2I32UGm0Sh+WOyjOPgo/5URbxxSNV6HYsxV4MQ=="
@@ -6919,6 +6945,16 @@
     "resolve" "^2.0.0-next.4"
     "semver" "^6.3.0"
     "string.prototype.matchall" "^4.0.8"
+
+"eslint-plugin-storybook@^0.6.12":
+  "integrity" "sha512-XbIvrq6hNVG6rpdBr+eBw63QhOMLpZneQVSooEDow8aQCWGCk/5vqtap1yxpVydNfSxi3S/3mBBRLQqKUqQRww=="
+  "resolved" "https://registry.npmjs.org/eslint-plugin-storybook/-/eslint-plugin-storybook-0.6.12.tgz"
+  "version" "0.6.12"
+  dependencies:
+    "@storybook/csf" "^0.0.1"
+    "@typescript-eslint/utils" "^5.45.0"
+    "requireindex" "^1.1.0"
+    "ts-dedent" "^2.2.0"
 
 "eslint-scope@^4.0.3":
   "integrity" "sha512-p7VutNr1O/QrxysMo3E45FjYDTeXBy0iTltPFNSqKAIfjDSXC+4dj+qfyuD8bfAXrW/y6lW3O76VaYNPKfpKrg=="
@@ -12406,7 +12442,7 @@
   "resolved" "https://registry.npmjs.org/require-from-string/-/require-from-string-2.0.2.tgz"
   "version" "2.0.2"
 
-"requireindex@~1.1.0":
+"requireindex@^1.1.0", "requireindex@~1.1.0":
   "integrity" "sha1-5UBLgVV+91225JxacgBIk/4D4WI="
   "resolved" "https://registry.npmjs.org/requireindex/-/requireindex-1.1.0.tgz"
   "version" "1.1.0"
