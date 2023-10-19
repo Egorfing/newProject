@@ -1,28 +1,25 @@
-import { configureStore, ReducersMapObject } from "@reduxjs/toolkit"
-import { userReducer } from "entites/User"
-import { loginReducer } from "features/AuthByUsername"
-import { counterReducer } from "../../../../entites/Counter"
-import { StateSchema } from "./StateSchema"
+import { configureStore, DeepPartial, ReducersMapObject } from '@reduxjs/toolkit'
+import { userReducer } from 'entites/User'
+import { counterReducer } from '../../../../entites/Counter'
+import { createReducerManager } from './reducerManager'
+import { StateSchema } from './StateSchema'
 
-export function createReduxStore (initialState?: StateSchema) {
-
+export function createReduxStore(initialState?: StateSchema, asyncReducers?: ReducersMapObject<StateSchema>) {
   const rootReducer: ReducersMapObject<StateSchema> = {
+    ...asyncReducers,
     counter: counterReducer,
-    user: userReducer,
-    loginForm: loginReducer
+    user: userReducer
   }
 
-  return configureStore<StateSchema>({
-    reducer: rootReducer,
+  const reducerManager = createReducerManager(rootReducer)
+
+  const store = configureStore<StateSchema>({
+    reducer: reducerManager.reduce,
     devTools: __IS_DEV__,
     preloadedState: initialState
   })
-}
-export const store = configureStore({
-  reducer: {},
-})
 
-// Infer the `RootState` and `AppDispatch` types from the store itself
-export type RootState = ReturnType<typeof store.getState>
-// Inferred type: {posts: PostsState, comments: CommentsState, users: UsersState}
-export type AppDispatch = typeof store.dispatch
+  //@ts-ignore
+  store.reducerManager = reducerManager
+  return store
+}
