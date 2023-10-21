@@ -25,5 +25,14 @@
       "password": "123"
     }
   ],
-  "profile": { "name": "typicode" }
+  "profile": {
+    "first": "Egorfing",
+    "lastname": "Dev",
+    "age": 73,
+    "currency": "RUB",
+    "country": "Russia",
+    "city": "SPB",
+    "username": "admin",
+    "avatar": "https://www.freepngimg.com/thumb/mario_bros/92466-mario-toy-super-figurine-bros-download-hd-png.png"
+  }
 }

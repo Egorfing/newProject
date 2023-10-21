@@ -12,7 +12,9 @@ import {
 } from 'features/AuthByUsername/model/slice/loginSlice'
 import { memo, useCallback, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
-import { useDispatch, useSelector, useStore } from 'react-redux'
+import { useSelector, useStore } from 'react-redux'
+import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
 import { Button, ThemeButton } from 'shared/ui/Button/Button'
 import { Input } from 'shared/ui/Input/Input'
 import { Text, TextTheme } from 'shared/ui/Text/Text'
@@ -21,26 +23,20 @@ import cls from './LoginForm.module.scss'
 
 export interface LoginFormProps {
   className?: string
+  onSuccess: () => void
 }
 
-const LoginForm = memo(({ className }: LoginFormProps) => {
+const initialReducers: ReducersList = {
+  loginForm: loginReducer,
+};
+
+const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
   const { t } = useTranslation()
-  const dispatch = useDispatch()
+  const dispatch = useAppDispatch()
   const username = useSelector(getLoginUsername)
   const password = useSelector(getLoginPassword)
   const isLoading = useSelector(getLoginIsLoading)
   const error = useSelector(getLoginError)
-
-  const store = useStore() as ReduxStoreWithManager
-
-  useEffect(() => {
-    store.reducerManager.add('loginForm', loginReducer)
-    dispatch({ type: '@INIT loginForm reducer' })
-    return () => {
-      store.reducerManager.remove('loginForm')
-      dispatch({ type: '@DESTROY loginForm reducer' })
-    }
-  }, [])
 
   const onChangeUsername = useCallback(
     (value: string) => {
@@ -54,11 +50,18 @@ const LoginForm = memo(({ className }: LoginFormProps) => {
     },
     [dispatch]
   )
-  const onLoginClick = useCallback(() => {
-    dispatch(loginByUsername({ username, password }))
-  }, [dispatch, username, password])
+  const onLoginClick = useCallback(async() => {
+    const result = await dispatch(loginByUsername({ username, password }))
+    if(result.meta.requestStatus === 'fulfilled') {
+      onSuccess()
+    }
+  }, [dispatch, username, password, onSuccess])
 
   return (
+    <DynamicModuleLoader
+            removeAfterUnmount
+            reducers={initialReducers}
+        >
     <div className={classNames(cls.LoginForm, {}, [className])}>
       <Text title={t('Форма авторизации')} />
       {error && (
@@ -89,6 +92,7 @@ const LoginForm = memo(({ className }: LoginFormProps) => {
         {t('Войти')}
       </Button>
     </div>
+    </DynamicModuleLoader>
   )
 })
 export default LoginForm

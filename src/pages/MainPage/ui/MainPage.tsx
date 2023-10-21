@@ -1,8 +1,7 @@
-import { useState } from 'react';
+import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Input } from 'shared/ui/Input/Input';
 
-const MainPage = () => {
+const MainPage = memo(() => {
     const { t } = useTranslation();
 
     return (
@@ -10,6 +9,6 @@ const MainPage = () => {
             {t('Главная страница')}
         </div>
     );
-};
+});
 
 export default MainPage;
