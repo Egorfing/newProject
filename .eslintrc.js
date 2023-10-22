@@ -32,7 +32,8 @@ module.exports = {
       code: 80
     }],
     "react-hooks/rules-of-hooks": "error", // Checks rules of Hooks
-    "react-hooks/exhaustive-deps": "warn" // Checks effect dependencies
+    "react-hooks/exhaustive-deps": "warn", // Checks effect dependencies
+    "no-undef": "off"
   },
   globals: {
     __IS_DEV__: true,

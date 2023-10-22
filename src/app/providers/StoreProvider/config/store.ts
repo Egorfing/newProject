@@ -1,4 +1,4 @@
-import { configureStore, DeepPartial, getDefaultMiddleware, ReducersMapObject } from '@reduxjs/toolkit'
+import { CombinedState, configureStore, getDefaultMiddleware, Reducer, ReducersMapObject } from '@reduxjs/toolkit'
 import { userReducer } from 'entites/User'
 import { NavigateOptions, To } from 'react-router-dom'
 import { $api } from 'shared/api/api'
@@ -20,7 +20,7 @@ export function createReduxStore(
   const reducerManager = createReducerManager(rootReducer)
 
   const store = configureStore({
-    reducer: reducerManager.reduce,
+    reducer: reducerManager.reduce as Reducer<CombinedState<StateSchema>>,
     devTools: __IS_DEV__,
     preloadedState: initialState,
     middleware: (getDefaultMiddleware) => getDefaultMiddleware({

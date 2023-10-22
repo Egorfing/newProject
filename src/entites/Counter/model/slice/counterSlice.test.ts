@@ -1,5 +1,3 @@
-import { DeepPartial } from "@reduxjs/toolkit"
-import { StateSchema } from "../../../../app/providers/StoreProvider"
 import { CounterSchema } from "../types/counterSchems"
 import { counterActions, counterReducer } from "./counterSlice"
 

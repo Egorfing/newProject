@@ -1,4 +1,4 @@
-import React, { InputHTMLAttributes, memo, useEffect, useRef, useState } from 'react'
+import React, { InputHTMLAttributes, memo, MutableRefObject, useEffect, useRef, useState } from 'react'
 import { classNames } from '../../../shared/lib/classNames/classNames'
 import cls from './Input.module.scss'
 
@@ -23,7 +23,7 @@ export const Input = memo(
     autoFocus,
     ...otherProps
   }: InputProps) => {
-    const ref = useRef<HTMLInputElement>()
+    const ref = useRef() as MutableRefObject<HTMLInputElement>
     const [isFocused, setIsFocused] = useState(false)
     const [caretPosition, setCaretPosition] = useState(0)
 
@@ -56,7 +56,7 @@ export const Input = memo(
         )}
         <div className={cls.caretWrapper}>
           <input
-          ref={ref}
+            ref={ref}
             className={cls.input}
             type={type}
             onChange={onChangeHandler}
