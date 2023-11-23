@@ -1,6 +1,10 @@
-import { Profile } from 'entites/Profile/model/types/profile'
+import { Country, CountrySelect } from 'entities/Country'
+import { Currency } from 'entities/Currency'
+import { CurrencySelect } from 'entities/Currency/ui/CurrencySelect/CurrencySelect'
+import { Profile } from 'entities/Profile/model/types/profile'
 import { useTranslation } from 'react-i18next'
-import { classNames } from 'shared/lib/classNames/classNames'
+import { classNames, Mods } from 'shared/lib/classNames/classNames'
+import { Avatar } from 'shared/ui/Avatar/Avatar'
 import { Input } from 'shared/ui/Input/Input'
 import { Loader } from 'shared/ui/Loader/Loader'
 import { Text, TextAlign, TextTheme } from 'shared/ui/Text/Text'
@@ -18,6 +22,8 @@ interface ProfileCardProps {
   onChangeCity?: (value?: string) => void
   onChangeUsername?: (value?: string) => void
   onChangeAvatar?: (value?: string) => void
+  onChangeCurrency?: (value: Currency) => void
+  onChangeCountry?: (value: Country) => void
 }
 
 export const ProfileCard = ({
@@ -31,7 +37,9 @@ export const ProfileCard = ({
   onChangeAge,
   onChangeCity,
   onChangeUsername,
-  onChangeAvatar
+  onChangeAvatar,
+  onChangeCurrency,
+  onChangeCountry
 }: ProfileCardProps) => {
   const { t } = useTranslation('profile')
 
@@ -58,10 +66,18 @@ export const ProfileCard = ({
     )
   }
 
+  const mods: Mods = {
+    [cls.editing]: !readOnly
+  }
+
   return (
-    <div className={classNames(cls.ProfileCard, {}, [className])}>
+    <div className={classNames(cls.ProfileCard, mods, [className])}>
       <div className={cls.data}>
-        {data?.avatar && <img src={data?.avatar} />}
+        {data?.avatar && (
+          <div className={cls.avatarWrapper}>
+            <Avatar src={data?.avatar} />
+          </div>
+        )}
         <Input
           className={cls.input}
           value={data?.first}
@@ -103,6 +119,18 @@ export const ProfileCard = ({
           placeholder={t('Введите ссылку на аватар')}
           readOnly={readOnly}
           onChange={onChangeAvatar}
+        />
+        <CurrencySelect
+          className={cls.input}
+          value={data?.currency}
+          onChange={onChangeCurrency}
+          readonly={readOnly}
+        />
+        <CountrySelect
+          className={cls.input}
+          value={data?.country}
+          onChange={onChangeCountry}
+          readonly={readOnly}
         />
       </div>
     </div>

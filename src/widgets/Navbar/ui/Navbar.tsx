@@ -5,7 +5,7 @@ import { memo, useCallback, useState } from 'react'
 import { Button, ThemeButton } from '../../../shared/ui/Button/Button'
 import { LoginModal } from 'features/AuthByUsername'
 import { useSelector } from 'react-redux'
-import { getUserAuthData, userActions } from 'entites/User'
+import { getUserAuthData, userActions } from 'entities/User'
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
 
 interface NavbarProps {

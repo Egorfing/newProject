@@ -6,11 +6,11 @@ import {
   ReducersMapObject
 } from '@reduxjs/toolkit'
 import { AxiosInstance } from 'axios'
-import { ProfileSchema } from 'entites/Profile'
-import { UserSchema } from 'entites/User'
+import { ProfileSchema } from 'entities/Profile'
+import { UserSchema } from 'entities/User'
 import { LoginSchema } from 'features/AuthByUsername'
 import { NavigateOptions, To } from 'react-router-dom'
-import { CounterSchema } from '../../../../entites/Counter'
+import { CounterSchema } from '../../../../entities/Counter'
 
 export interface StateSchema {
   counter: CounterSchema

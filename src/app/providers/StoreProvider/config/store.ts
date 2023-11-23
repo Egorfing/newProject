@@ -1,8 +1,8 @@
 import { CombinedState, configureStore, getDefaultMiddleware, Reducer, ReducersMapObject } from '@reduxjs/toolkit'
-import { userReducer } from 'entites/User'
+import { userReducer } from 'entities/User'
 import { NavigateOptions, To } from 'react-router-dom'
 import { $api } from 'shared/api/api'
-import { counterReducer } from '../../../../entites/Counter'
+import { counterReducer } from '../../../../entities/Counter'
 import { createReducerManager } from './reducerManager'
 import { StateSchema } from './StateSchema'
 

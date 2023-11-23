@@ -13,14 +13,16 @@ import {
   profileActions,
   ProfileCard,
   profileReducer
-} from 'entites/Profile'
+} from 'entities/Profile'
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
 import { useSelector } from 'react-redux'
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader'
 import {
   getProfileForm,
   getProfileReadOnly
-} from 'entites/Profile/model/selectors/getProfileState'
+} from 'entities/Profile/model/selectors/getProfileState'
+import { Currency } from 'entities/Currency'
+import { Country } from 'entities/Country'
 
 interface ProfilePageProps {
   className?: string
@@ -74,12 +76,26 @@ const ProfilePage = memo(({ className }: ProfilePageProps) => {
     (value?: string) => {
       dispatch(profileActions.updateProfile({ username: value || '' }))
     },
-    [dispatch])
-    const onChangeAvatar = useCallback(
-      (value?: string) => {
-        dispatch(profileActions.updateProfile({ avatar: value || '' }))
-      },
-      [dispatch])
+    [dispatch]
+  )
+  const onChangeAvatar = useCallback(
+    (value?: string) => {
+      dispatch(profileActions.updateProfile({ avatar: value || '' }))
+    },
+    [dispatch]
+  )
+  const onChangeCurrency = useCallback(
+    (currency: Currency) => {
+      dispatch(profileActions.updateProfile({ currency }))
+    },
+    [dispatch]
+  )
+  const onChangeCountry = useCallback(
+    (country: Country) => {
+      dispatch(profileActions.updateProfile({ country }))
+    },
+    [dispatch]
+  )
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
       <div className={classNames('', {}, [className])}>
@@ -95,6 +111,8 @@ const ProfilePage = memo(({ className }: ProfilePageProps) => {
           onChangeCity={onChangeCity}
           onChangeUsername={onChangeUsername}
           onChangeAvatar={onChangeAvatar}
+          onChangeCurrency={onChangeCurrency}
+          onChangeCountry={onChangeCountry}
         />
       </div>
     </DynamicModuleLoader>

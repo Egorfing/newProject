@@ -1,5 +1,5 @@
-import { profileActions, updateProfileData } from 'entites/Profile'
-import { getProfileReadOnly } from 'entites/Profile/model/selectors/getProfileState'
+import { profileActions, updateProfileData } from 'entities/Profile'
+import { getProfileReadOnly } from 'entities/Profile/model/selectors/getProfileState'
 import { useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
