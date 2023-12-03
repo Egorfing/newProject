@@ -8,4 +8,4 @@ export {updateProfileData} from './services/updateProfileData/updateProfileData'
 export {ProfileCard} from './ui/ProfileCard/ProfileCard'
 
   
-  export {getProfileData, getProfileError, getProfileIsLoading} from './model/selectors/getProfileState'
+  export {getProfileData, getProfileError, getProfileIsLoading, getProfileValidateErrors} from './model/selectors/getProfileState'
