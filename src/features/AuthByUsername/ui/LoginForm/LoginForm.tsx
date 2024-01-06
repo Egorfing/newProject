@@ -13,7 +13,10 @@ import {
 import { memo, useCallback, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSelector, useStore } from 'react-redux'
-import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
+import {
+  DynamicModuleLoader,
+  ReducersList
+} from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
 import { Button, ThemeButton } from 'shared/ui/Button/Button'
 import { Input } from 'shared/ui/Input/Input'
@@ -27,8 +30,8 @@ export interface LoginFormProps {
 }
 
 const initialReducers: ReducersList = {
-  loginForm: loginReducer,
-};
+  loginForm: loginReducer
+}
 
 const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
   const { t } = useTranslation()
@@ -50,48 +53,45 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
     },
     [dispatch]
   )
-  const onLoginClick = useCallback(async() => {
+  const onLoginClick = useCallback(async () => {
     const result = await dispatch(loginByUsername({ username, password }))
-    if(result.meta.requestStatus === 'fulfilled') {
+    if (result.meta.requestStatus === 'fulfilled') {
       onSuccess()
     }
   }, [dispatch, username, password, onSuccess])
 
   return (
-    <DynamicModuleLoader
-            removeAfterUnmount
-            reducers={initialReducers}
-        >
-    <div className={classNames(cls.LoginForm, {}, [className])}>
-      <Text title={t('Форма авторизации')} />
-      {error && (
-        <Text
-          text={t('Вы ввели неверный логин или пароль')}
-          theme={TextTheme.ERROR}
+    <DynamicModuleLoader reducers={initialReducers}>
+      <div className={classNames(cls.LoginForm, {}, [className])}>
+        <Text title={t('Форма авторизации')} />
+        {error && (
+          <Text
+            text={t('Вы ввели неверный логин или пароль')}
+            theme={TextTheme.ERROR}
+          />
+        )}
+        <Input
+          autoFocus
+          placeholder={t('Введите username')}
+          className={cls.input}
+          value={username}
+          onChange={onChangeUsername}
         />
-      )}
-      <Input
-        autoFocus
-        placeholder={t('Введите username')}
-        className={cls.input}
-        value={username}
-        onChange={onChangeUsername}
-      />
-      <Input
-        placeholder={t('Введите пароль')}
-        className={cls.input}
-        value={password}
-        onChange={onChangePassword}
-      />
-      <Button
-        theme={ThemeButton.OUTLINE}
-        className={cls.loginBtn}
-        disabled={isLoading}
-        onClick={onLoginClick}
-      >
-        {t('Войти')}
-      </Button>
-    </div>
+        <Input
+          placeholder={t('Введите пароль')}
+          className={cls.input}
+          value={password}
+          onChange={onChangePassword}
+        />
+        <Button
+          theme={ThemeButton.OUTLINE}
+          className={cls.loginBtn}
+          disabled={isLoading}
+          onClick={onLoginClick}
+        >
+          {t('Войти')}
+        </Button>
+      </div>
     </DynamicModuleLoader>
   )
 })

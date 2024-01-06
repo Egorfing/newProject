@@ -11,7 +11,8 @@ const data = {
   lastname: 'adminov',
   first: 'ads',
   city: 'SPB',
-  currency: Currency.RUB
+  currency: Currency.RUB,
+  id: '1'
 }
 describe('test updateProfileData.test', () => {
   test('success update', async () => {

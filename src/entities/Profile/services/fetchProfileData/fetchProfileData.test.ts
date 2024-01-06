@@ -20,7 +20,7 @@ describe('test fetchProfileData.test', () => {
       Promise.resolve({data})
     )
 
-    const result = await thunk.callThunk()
+    const result = await thunk.callThunk('1')
     
 
     expect(thunk.api.get).toHaveBeenCalled()
@@ -34,7 +34,7 @@ describe('test fetchProfileData.test', () => {
       Promise.resolve({status: 403})
     )
 
-    const result = await thunk.callThunk()
+    const result = await thunk.callThunk('1')
     expect(result.meta.requestStatus).toBe('rejected')
 
     
