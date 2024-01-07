@@ -27,7 +27,7 @@ export const ArticleList = memo(
     className,
     articles,
     isLoading,
-    view = ArticleView.SMALL
+    view = ArticleView.BIG
   }: ArticleListProps) => {
     if (isLoading) {
       return (

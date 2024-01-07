@@ -1,5 +1,6 @@
-import { memo } from 'react'
+import { memo, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
+import { useNavigate } from 'react-router-dom'
 
 import cls from './ArticleItem.module.scss'
 
@@ -17,8 +18,6 @@ import {
   ArticleView
 } from '../../model/types/article'
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent'
-import { useNavigate } from 'react-router-dom'
-import { useCallback } from '@storybook/addons'
 import { RoutePath } from 'shared/config/routeConfig/routeConfig'
 
 interface ArticleItemProps {
@@ -35,6 +34,7 @@ export const ArticleItem = memo(
     const onOpenArticle = useCallback(() => {
       navigate(RoutePath.article_details + article.id)
     }, [article.id, navigate])
+
     const types = <Text text={article.type.join(', ')} className={cls.types} />
     const title = <Text text={article.title} className={cls.title} />
     const views = (
