@@ -25,6 +25,7 @@ import {
   articleDetailsCommentsReducer,
   getArticleComments
 } from '../../model/slice/articleDetailsCommentsSlice'
+import { Page } from 'widgets/Page/Page'
 
 interface ArticleDetailsPageProps {
   className?: string
@@ -47,9 +48,9 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
   })
   if (!id) {
     return (
-      <div className={classNames(cls.ArticleDetailsPage, {}, [className])}>
+      <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
         {t('Статья не найдена')}
-      </div>
+      </Page>
     )
   }
 
@@ -66,13 +67,13 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
   
   return (
     <DynamicModuleLoader reducers={reducers}>
-      <div className={classNames(cls.ArticleDetailsPage, {}, [className])}>
+      <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
         <Button onClick={onBackToList}>{t('Назад к списку')}</Button>
         <ArticleDetails id={id} />
         <Text className={cls.commentTitle} title={t('Комментарии')} />
         <AddCommentForm onSendComment={onSendComment} />
         <CommentList isLoading={commentsIsLoading} comments={comments} />
-      </div>
+      </Page>
     </DynamicModuleLoader>
   )
 }

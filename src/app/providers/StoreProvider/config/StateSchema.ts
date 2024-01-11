@@ -11,14 +11,15 @@ import { ProfileSchema } from 'entities/Profile'
 import { UserSchema } from 'entities/User'
 import { AddCommentFormSchema } from 'features/AddCommentForm'
 import { LoginSchema } from 'features/AuthByUsername'
+import { UISchema } from 'features/UI'
 import { ArticleDetailsCommentsSchema } from 'pages/ArticleDetailsPage'
 import { ArticlePageSchema } from 'pages/ArticlesPage'
-import { NavigateOptions, To } from 'react-router-dom'
 import { CounterSchema } from '../../../../entities/Counter'
 
 export interface StateSchema {
   counter: CounterSchema
   user: UserSchema
+  ui: UISchema
   
   //Асинхронные редьюсеры
   loginForm?: LoginSchema
@@ -44,7 +45,6 @@ export interface ReduxStoreWithManager extends EnhancedStore<StateSchema> {
 
 export interface ThunkExtraArg {
   api: AxiosInstance
-  navigate?: (to: To, options?: NavigateOptions) => void
 }
 
 export interface ThunkConfig<T> {
