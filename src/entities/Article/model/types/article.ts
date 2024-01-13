@@ -1,4 +1,4 @@
-import { User } from "entities/User"
+import { User } from 'entities/User'
 
 export interface Article {
   id: string
@@ -15,7 +15,14 @@ export type ArticleBlock =
   | ArticleTextBlock
   | ArticleImageBlock
   | ArticleCodeBlock
+
+export enum ArticleSortField {
+  VIEWS = 'views',
+  TITLE = 'title',
+  CREATED = 'createdAt'
+}
 export enum ArticleType {
+  ALL = 'ALL',
   IT = 'IT',
   SCIENCE = 'SCIENCE',
   ECONOMICS = 'ECONOMICS'
