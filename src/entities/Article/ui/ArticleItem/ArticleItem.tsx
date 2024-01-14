@@ -1,4 +1,4 @@
-import { memo, useCallback } from 'react'
+import { HTMLAttributeAnchorTarget, memo, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
 
@@ -19,21 +19,18 @@ import {
 } from '../../model/types/article'
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent'
 import { RoutePath } from 'shared/config/routeConfig/routeConfig'
+import { AppLink } from 'shared/ui/AppLink/AppLink'
 
 interface ArticleItemProps {
   className?: string
   article: Article
   view: ArticleView
+  target?: HTMLAttributeAnchorTarget
 }
 
 export const ArticleItem = memo(
-  ({ className, article, view }: ArticleItemProps) => {
+  ({ className, article, view, target = '_self' }: ArticleItemProps) => {
     const { t } = useTranslation()
-    const navigate = useNavigate()
-
-    const onOpenArticle = useCallback(() => {
-      navigate(RoutePath.article_details + article.id)
-    }, [article.id, navigate])
 
     const types = <Text text={article.type.join(', ')} className={cls.types} />
     const title = <Text text={article.title} className={cls.title} />
@@ -78,9 +75,11 @@ export const ArticleItem = memo(
               />
             )}
             <div className={cls.footer}>
-              <Button onClick={onOpenArticle} theme={ThemeButton.OUTLINE}>
-                {t('Читать далее ...')}
-              </Button>
+              <AppLink target={target} to={RoutePath.article_details + article.id}>
+                <Button theme={ThemeButton.OUTLINE}>
+                  {t('Читать далее ...')}
+                </Button>
+              </AppLink>
               {views}
             </div>
           </Card>
@@ -88,8 +87,12 @@ export const ArticleItem = memo(
       )
     }
     return (
-      <div className={classNames(cls.ArticleItem, {}, [className, cls[view]])}>
-        <Card onClick={onOpenArticle}>
+      <AppLink
+        target={target}
+        className={classNames(cls.ArticleItem, {}, [className, cls[view]])}
+        to={RoutePath.article_details + article.id}
+      >
+        <Card>
           <div className={cls.imageWrapper}>
             {img}
             {date}
@@ -100,7 +103,7 @@ export const ArticleItem = memo(
           </div>
           {title}
         </Card>
-      </div>
+      </AppLink>
     )
   }
 )

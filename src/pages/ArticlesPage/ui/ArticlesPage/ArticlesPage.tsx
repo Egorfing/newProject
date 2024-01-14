@@ -26,7 +26,7 @@ import {
   articlesPageReducer,
   getArticles
 } from '../../model/slice/articlesPageSlice'
-import { ArticlesPageFilters } from '../ArticlesPageFiltres/ArticlesPageFilters'
+import { ArticlesPageFilters } from '../ArticlesPageFilters/ArticlesPageFilters'
 
 interface ArticlesPageProps {
   className?: string

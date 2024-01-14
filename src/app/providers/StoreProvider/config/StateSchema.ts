@@ -12,7 +12,7 @@ import { UserSchema } from 'entities/User'
 import { AddCommentFormSchema } from 'features/AddCommentForm'
 import { LoginSchema } from 'features/AuthByUsername'
 import { UISchema } from 'features/UI'
-import { ArticleDetailsCommentsSchema } from 'pages/ArticleDetailsPage'
+import { ArticleDetailsCommentsSchema, ArticleDetailsPageSchema, ArticleDetailsRecommendationSchema } from 'pages/ArticleDetailsPage'
 import { ArticlePageSchema } from 'pages/ArticlesPage'
 import { CounterSchema } from '../../../../entities/Counter'
 
@@ -25,9 +25,11 @@ export interface StateSchema {
   loginForm?: LoginSchema
   profile?: ProfileSchema
   articleDetails?: ArticleDetailsSchema
-  articleDetailsComments?: ArticleDetailsCommentsSchema
+  // articleDetailsComments?: ArticleDetailsCommentsSchema
+  // articleDetailsPageRecommendations?: ArticleDetailsRecommendationSchema
   addCommentForm?: AddCommentFormSchema
   articlesPage?: ArticlePageSchema
+  articlesDetailsPage?: ArticleDetailsPageSchema
 }
 
 export type StateSchemaKey = keyof StateSchema

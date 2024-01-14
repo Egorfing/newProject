@@ -1,4 +1,4 @@
-import { memo } from 'react'
+import { HTMLAttributeAnchorTarget, memo } from 'react'
 
 import cls from './ArticleList.module.scss'
 
@@ -14,6 +14,7 @@ interface ArticleListProps {
   articles: Article[]
   isLoading?: boolean
   view?: ArticleView
+  target?: HTMLAttributeAnchorTarget
 }
 
 const getSkeletons = (view: ArticleView) => {
@@ -29,7 +30,8 @@ export const ArticleList = memo(
     className,
     articles,
     isLoading,
-    view = ArticleView.BIG
+    view = ArticleView.BIG,
+    target
   }: ArticleListProps) => {
     const { t } = useTranslation()
     const renderArticle = (article: Article) => {
@@ -39,6 +41,7 @@ export const ArticleList = memo(
           className={cls.card}
           article={article}
           view={view}
+          target={target}
         />
       )
     }
