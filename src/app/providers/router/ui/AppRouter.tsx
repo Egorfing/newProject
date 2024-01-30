@@ -4,7 +4,7 @@ import {
   AppRouterProps, routeConfig
 } from 'shared/config/routeConfig/routeConfig'
 import { PageLoader } from 'shared/ui/PageLoader/PageLoader'
-import { RequireAuth } from './requireAuth'
+import { RequireAuth } from './RequireAuth'
 
 const AppRouter = () => {
   const renderWithCallback = useCallback((route: AppRouterProps) => {
