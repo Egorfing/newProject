@@ -1,6 +1,6 @@
 import webpack from 'webpack'
 import { buildBabelLoader } from './loaders/buildBabelLoader'
-import { buildCssLoader } from './loaders/buildCssLoader'
+// import { buildCssLoader } from './loaders/buildCssLoader'
 import { buildScssLoader } from './loaders/buildScssLoader'
 import { BuildOptions } from './types/config'
 
@@ -14,7 +14,7 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
   const babelLoader = buildBabelLoader(options)
 
   const scssLoader = buildScssLoader(isDev)
-  const cssLoader = buildCssLoader(isDev)
+  // const cssLoader = buildCssLoader(isDev)
 
   // Если не используем тайпскрипт - нужен babel-loader
   const typescriptLoader = {
@@ -32,5 +32,5 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
     ]
   }
 
-  return [fileLoader, svgLoader, babelLoader, typescriptLoader, cssLoader, scssLoader]
+  return [fileLoader, svgLoader, babelLoader, typescriptLoader, scssLoader]
 }
