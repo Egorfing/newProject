@@ -4,7 +4,6 @@ module.exports = {
     es2021: true
   },
   extends: ['plugin:react/recommended', 'standard-with-typescript', 'plugin:i18next/recommended', 'plugin:storybook/recommended'],
-  overrides: [],
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
@@ -14,7 +13,8 @@ module.exports = {
   plugins: ['react', 'i18next', 'react-hooks'],
   rules: {
     '@typescript-eslint/space-before-function-paren': 'off',
-    '@typescript-eslint/consistent-type-imports': 'off',
+    '@typescript-eslint/consistent-type-imports': "off",
+    "@typescript-eslint/restrict-plus-operands": "off",
     '@typescript-eslint/prefer-nullish-coalescing': 'off',
     '@typescript-eslint/strict-boolean-expressions': 'off',
     'react/react-in-jsx-scope': 'off',
