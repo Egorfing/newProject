@@ -52,8 +52,8 @@ export const Navbar = memo(({ className }: NavbarProps) => {
   return (
     <header className={classNames(cls.Navbar, {}, [className])}>
       <div className={cls.links}>
-        <Text theme={TextTheme.INVERTED} className={cls.appName} title={t('Приложение Егорфинг')} />
-        <AppLink className={cls.createLink} theme={AppLinkTheme.SECONDARY} to={RoutePath.article_create}>{t('Создать статью')}</AppLink>
+        {/* <Text theme={TextTheme.INVERTED} className={cls.appName} title={t('Приложение Егорфинг')} />
+        <AppLink className={cls.createLink} theme={AppLinkTheme.SECONDARY} to={RoutePath.article_create}>{t('Создать статью')}</AppLink> */}
         <Button
           theme={ThemeButton.CLEAR_INVERTED}
           className={cls.links}
