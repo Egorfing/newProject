@@ -27,7 +27,7 @@ jobs:
       if: always()
     # - name: 'linting typescript'
     #   run: npm run lint:ts
-      if: always()
+      # if: always()
     - name: 'linting css'
       run: npm run lint:scss
       if: always()
