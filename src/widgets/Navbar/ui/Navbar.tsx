@@ -7,6 +7,9 @@ import { LoginModal } from 'features/AuthByUsername'
 import { useSelector } from 'react-redux'
 import { getUserAuthData, userActions } from 'entities/User'
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
+import { Text, TextTheme } from 'shared/ui/Text/Text'
+import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink'
+import { RoutePath } from 'shared/config/routeConfig/routeConfig'
 
 interface NavbarProps {
   className?: string
@@ -28,27 +31,29 @@ export const Navbar = memo(({ className }: NavbarProps) => {
 
   const onLogout = useCallback(() => {
     dispatch(userActions.logout())
-  },[dispatch])
+  }, [dispatch])
 
   if (authData) {
     return (
       <header className={classNames(cls.Navbar, {}, [className])}>
-      <div className={cls.links}>
-        <Button
-          theme={ThemeButton.CLEAR_INVERTED}
-          className={cls.links}
-          onClick={onLogout}
-        >
-          {t('Выйти')}
-        </Button>
-      </div>
-    </header>
+        <div className={cls.links}>
+          <Button
+            theme={ThemeButton.CLEAR_INVERTED}
+            className={cls.links}
+            onClick={onLogout}
+          >
+            {t('Выйти')}
+          </Button>
+        </div>
+      </header>
     )
   }
 
   return (
     <header className={classNames(cls.Navbar, {}, [className])}>
       <div className={cls.links}>
+        <Text theme={TextTheme.INVERTED} className={cls.appName} title={t('Приложение Егорфинг')} />
+        <AppLink className={cls.createLink} theme={AppLinkTheme.SECONDARY} to={RoutePath.article_create}>{t('Создать статью')}</AppLink>
         <Button
           theme={ThemeButton.CLEAR_INVERTED}
           className={cls.links}
@@ -56,8 +61,9 @@ export const Navbar = memo(({ className }: NavbarProps) => {
         >
           {t('Войти')}
         </Button>
-        {isAuthModal && <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />}
-        
+        {isAuthModal && (
+          <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />
+        )}
       </div>
     </header>
   )

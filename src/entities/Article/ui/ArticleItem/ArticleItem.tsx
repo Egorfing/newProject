@@ -31,6 +31,7 @@ interface ArticleItemProps {
 export const ArticleItem = memo(
   ({ className, article, view, target = '_self' }: ArticleItemProps) => {
     const { t } = useTranslation()
+console.log('article', article);
 
     const types = <Text text={article.type.join(', ')} className={cls.types} />
     const title = <Text text={article.title} className={cls.title} />
