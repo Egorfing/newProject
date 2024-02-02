@@ -16,7 +16,6 @@ interface ArticleItemSkeletonProps {
 
 export const ArticleItemSkeleton = memo(
   ({ className, view }: ArticleItemSkeletonProps) => {
-    
     if (view === ArticleView.BIG) {
       return (
         <div

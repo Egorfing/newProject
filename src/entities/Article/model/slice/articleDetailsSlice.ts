@@ -3,7 +3,6 @@ import { fetchArticleById } from '../services/fetchArticleById'
 import { Article } from '../types/article'
 import { ArticleDetailsSchema } from '../types/ArticleDetailsSchema'
 
-
 const initialState: ArticleDetailsSchema = {
   isLoading: false,
   error: undefined,
@@ -14,7 +13,7 @@ export const articleDetailsSlice = createSlice({
   name: 'articleDetails',
   initialState,
   reducers: {
-   
+
   },
   extraReducers: (builder) => {
     builder

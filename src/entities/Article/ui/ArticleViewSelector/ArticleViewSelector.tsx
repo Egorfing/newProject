@@ -39,7 +39,7 @@ export const ArticleViewSelector = ({
         <Button
           key={index}
           theme={ThemeButton.CLEAR}
-          onClick={() => onClick(viewType.view)}
+          onClick={() => { onClick(viewType.view) }}
         >
           <Icon
             Svg={viewType.icon}

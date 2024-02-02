@@ -2,11 +2,10 @@ import { createAsyncThunk } from '@reduxjs/toolkit'
 import { ThunkConfig } from 'app/providers/StoreProvider'
 import { Article } from '../types/article'
 
-
 export const fetchArticleById = createAsyncThunk<
-  Article,
-  string,
-  ThunkConfig<string>
+Article,
+string,
+ThunkConfig<string>
 >(
   'article/fetchArticleById',
   async (id, { rejectWithValue, extra }) => {
@@ -17,7 +16,7 @@ export const fetchArticleById = createAsyncThunk<
         }
       })
 
-      if(!response.data) {
+      if (!response.data) {
         throw new Error()
       }
       return response.data

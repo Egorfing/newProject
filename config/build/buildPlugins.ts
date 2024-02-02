@@ -27,12 +27,10 @@ export function buildPlugins({
       __PROJECT__: JSON.stringify(project)
     })
   ]
-  if(paths.locales && paths.buildLocales) {
+  if (paths.locales && paths.buildLocales) {
     plugins.push(
       new CopyPlugin({
-        patterns: [
-          { from: paths.locales, to: paths.buildLocales },
-        ]
+        patterns: [{ from: paths.locales, to: paths.buildLocales }]
       })
     )
   }

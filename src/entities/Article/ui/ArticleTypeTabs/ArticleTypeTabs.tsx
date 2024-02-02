@@ -14,8 +14,8 @@ interface ArticleTypeTabsProps {
 export const ArticleTypeTabs = ({ className, onTypeChange }: ArticleTypeTabsProps) => {
   const type = useSelector(getArticlesType)
   const { t } = useTranslation()
-  
-  const typeTabs = useMemo<TabItem<ArticleType>[]>(
+
+  const typeTabs = useMemo<Array<TabItem<ArticleType>>>(
     () => [
       { value: ArticleType.ALL, content: t('Все статьи') },
       { value: ArticleType.IT, content: t('Айти') },

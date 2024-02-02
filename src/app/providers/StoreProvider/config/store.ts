@@ -8,8 +8,8 @@ import { StateSchema } from './StateSchema'
 
 export function createReduxStore(
   initialState?: StateSchema,
-  asyncReducers?: ReducersMapObject<StateSchema>,
-  ) {
+  asyncReducers?: ReducersMapObject<StateSchema>
+) {
   const rootReducer: ReducersMapObject<StateSchema> = {
     ...asyncReducers,
     counter: counterReducer,
@@ -26,15 +26,15 @@ export function createReduxStore(
     middleware: (getDefaultMiddleware) => getDefaultMiddleware({
       thunk: {
         extraArgument: {
-          api: $api,
+          api: $api
         }
       }
     })
   })
 
-  //@ts-ignore
+  // @ts-expect-error
   store.reducerManager = reducerManager
   return store
 }
 
-export type AppDispatch =  ReturnType<typeof createReduxStore>['dispatch']
+export type AppDispatch = ReturnType<typeof createReduxStore>['dispatch']

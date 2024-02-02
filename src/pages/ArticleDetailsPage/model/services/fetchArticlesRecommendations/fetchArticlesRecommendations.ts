@@ -7,13 +7,12 @@ interface FetchArticleListArgs {
 }
 
 export const fetchArticleRecommendation = createAsyncThunk<
-  Article[],
-  void,
-  ThunkConfig<string>
+Article[],
+void,
+ThunkConfig<string>
 >(
   'articlesDetailsPage/fetchArticleRecommendation',
   async (args, { rejectWithValue, extra }) => {
-    
     try {
       const response = await extra.api.get<Article[]>('/articles', {
         params: {

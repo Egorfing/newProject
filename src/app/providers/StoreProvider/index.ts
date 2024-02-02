@@ -7,7 +7,7 @@ import { StoreProvider } from './ui/StoreProvider'
 export {
   StoreProvider,
   createReduxStore,
-  StateSchema,
-  AppDispatch,
-  ThunkConfig
+  type StateSchema,
+  type AppDispatch,
+  type ThunkConfig
 }

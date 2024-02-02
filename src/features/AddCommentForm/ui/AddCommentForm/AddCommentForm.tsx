@@ -46,7 +46,7 @@ const AddCommentForm = memo(({ className, onSendComment }: AddCommentFormProps) 
 
   const onCommentSend = useCallback(
     () => {
-      if(text){
+      if (text) {
         onSendComment(text)
         onCommentTextChange('')
       }

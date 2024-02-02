@@ -20,8 +20,8 @@ export interface StateSchema {
   counter: CounterSchema
   user: UserSchema
   ui: UISchema
-  
-  //Асинхронные редьюсеры
+
+  // Асинхронные редьюсеры
   loginForm?: LoginSchema
   profile?: ProfileSchema
   articleDetails?: ArticleDetailsSchema

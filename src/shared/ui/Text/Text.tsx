@@ -14,7 +14,7 @@ export enum TextAlign {
 }
 export enum TextSize {
   M = 'size_m',
-  L = 'size_l',
+  L = 'size_l'
 }
 interface TextProps {
   className?: string
@@ -36,7 +36,12 @@ export const Text = memo(
   }: TextProps) => {
     return (
       <div
-        className={classNames(cls.Text, {}, [className, cls[theme], cls[align], cls[size]])}
+        className={classNames(cls.Text, {}, [
+          className,
+          cls[theme],
+          cls[align],
+          cls[size]
+        ])}
       >
         {title && <p className={cls.title}>{title}</p>}
         {text && <p className={cls.text}>{text}</p>}

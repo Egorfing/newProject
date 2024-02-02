@@ -35,7 +35,6 @@ export const ArticleList = memo(
   }: ArticleListProps) => {
     const { t } = useTranslation()
     const renderArticle = (article: Article) => {
-      
       return (
         <ArticleItem
           key={article.id}

@@ -26,7 +26,7 @@ export const ArticleSortSelector = memo(
   }: ArticleSortSelectorProps) => {
     const { t } = useTranslation()
 
-    const orderOptions = useMemo<SelectOption<SortOrder>[]>(
+    const orderOptions = useMemo<Array<SelectOption<SortOrder>>>(
       () => [
         {
           value: 'asc',
@@ -39,7 +39,7 @@ export const ArticleSortSelector = memo(
       ],
       [t]
     )
-    const sortFieldOptions = useMemo<SelectOption<ArticleSortField>[]>(
+    const sortFieldOptions = useMemo<Array<SelectOption<ArticleSortField>>>(
       () => [
         {
           value: ArticleSortField.CREATED,

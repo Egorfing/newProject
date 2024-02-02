@@ -60,7 +60,7 @@ describe('profileSlice.test', () => {
   })
   test('test update profile fulfilled service', () => {
     const state: DeepPartial<ProfileSchema> = {
-      isLoading: true,
+      isLoading: true
     }
 
     expect(

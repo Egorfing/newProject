@@ -4,11 +4,10 @@ import { getArticlesPageHasMore, getArticlesPageIsLoading, getArticlesPageNum } 
 import { articlesPageActions } from '../slice/articlesPageSlice'
 import { fetchArticleList } from './fetchArticleList'
 
-
 export const fetchNextArticlePage = createAsyncThunk<
-  void,
-  void,
-  ThunkConfig<string>
+void,
+void,
+ThunkConfig<string>
 >('articlesPage/fetchNextArticlePage', async (_, { dispatch, getState }) => {
   const page = getArticlesPageNum(getState())
   const isLoading = getArticlesPageIsLoading(getState())

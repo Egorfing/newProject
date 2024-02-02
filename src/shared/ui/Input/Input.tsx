@@ -1,10 +1,17 @@
-import React, { InputHTMLAttributes, memo, MutableRefObject, useEffect, useRef, useState } from 'react'
+import React, {
+  InputHTMLAttributes,
+  memo,
+  MutableRefObject,
+  useEffect,
+  useRef,
+  useState
+} from 'react'
 import { classNames, Mods } from '../../../shared/lib/classNames/classNames'
 import cls from './Input.module.scss'
 
 type HTMLInputProps = Omit<
-  InputHTMLAttributes<HTMLInputElement>,
-  'value' | 'onChange' | 'readOnly'
+InputHTMLAttributes<HTMLInputElement>,
+'value' | 'onChange' | 'readOnly'
 >
 
 interface InputProps extends HTMLInputProps {
@@ -32,12 +39,12 @@ export const Input = memo(
 
     const isCaretVisible = isFocused && !readOnly
 
-    useEffect(()=>{
-      if(autoFocus) {
+    useEffect(() => {
+      if (autoFocus) {
         setIsFocused(true)
         ref.current?.focus()
       }
-    },[autoFocus])
+    }, [autoFocus])
 
     const onBlur = () => {
       setIsFocused(false)

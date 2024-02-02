@@ -44,7 +44,7 @@ const ArticlesPage = ({ className }: ArticlesPageProps) => {
   const view = useSelector(getArticlesPageView)
   const inited = useSelector(getArticlesInited)
   const [searchParams] = useSearchParams()
-  
+
   useInitialEffect(() => {
     if (inited) return
     const orderFormUrl = searchParams.get('order') as SortOrder
@@ -72,7 +72,6 @@ const ArticlesPage = ({ className }: ArticlesPageProps) => {
     dispatch(fetchNextArticlePage())
   }, [dispatch])
 
-  
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
       <Page

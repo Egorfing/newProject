@@ -14,7 +14,7 @@ export const addCommentFormSlice = createSlice({
     setText: (state, action: PayloadAction<string>) => {
       state.text = action.payload
     }
-  },
+  }
   // extraReducers: (builder) => {
   //   builder
   //     .addCase(loginByUsername.pending, (state) => {

@@ -10,6 +10,5 @@ export function getQueryParams(params: OptionalRecord<string, string>) {
 
 // фенкция добавления параметров поиска в url
 export function addQueryParams(params: OptionalRecord<string, string>) {
-  
   window.history.pushState(null, '', getQueryParams(params))
 }

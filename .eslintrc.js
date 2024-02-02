@@ -10,7 +10,7 @@ module.exports = {
     project: './tsconfig.json',
     tsconfigRootDir: __dirname
   },
-  plugins: ['react', 'i18next', 'react-hooks'],
+  plugins: ['react', 'i18next', 'react-hooks', 'plugin-imports'],
   rules: {
     '@typescript-eslint/space-before-function-paren': 'off',
     '@typescript-eslint/consistent-type-imports': "off",
@@ -23,17 +23,22 @@ module.exports = {
     '@typescript-eslint/no-floating-promises': 'off',
     '@typescript-eslint/naming-convention': 'off',
     '@typescript-eslint/prefer-optional-chain': 'off',
+    'react/display-name': 'off',
     'i18next/no-literal-string': ['error', {
       onlyAttribute: ['makrupOnly', 'callees'],
       ignoreAttribute: ['data-testid', 'to ']
     }],
     'max-len': ['error', {
       ignoreComments: true,
-      code: 80
+      code: 120
     }],
+    '@typescript-eslint/consistent-type-assertions': "off",
+    'react/prop-types': 'warn',
     "react-hooks/rules-of-hooks": "error", // Checks rules of Hooks
     "react-hooks/exhaustive-deps": "warn", // Checks effect dependencies
-    "no-undef": "off"
+    "no-undef": "off",
+    "plugin-imports/path-checker": "error",
+    '@typescript-eslint/no-misused-promises': 'warn',
   },
   globals: {
     __IS_DEV__: true,

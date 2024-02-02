@@ -17,9 +17,9 @@ interface FetchArticleListArgs {
 }
 
 export const fetchArticleList = createAsyncThunk<
-  Article[],
-  FetchArticleListArgs,
-  ThunkConfig<string>
+Article[],
+FetchArticleListArgs,
+ThunkConfig<string>
 >(
   'articlesPage/fetchArticleList',
   async (args, { rejectWithValue, extra, getState }) => {

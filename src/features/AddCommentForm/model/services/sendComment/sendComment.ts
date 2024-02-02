@@ -1,14 +1,13 @@
-import { createAsyncThunk } from "@reduxjs/toolkit";
-import { ThunkConfig } from "app/providers/StoreProvider";
-import { getArticleDetailsData } from "entities/Article/model/selectors/articleDetails";
-import { Comment } from "entities/Comment";
-import { getUserAuthData } from "entities/User";
-import { fetchCommentsByArticleId } from "pages/ArticleDetailsPage/model/services/fetchCommentsByArticleId/fetchCommentsByArticleId";
-
+import { createAsyncThunk } from '@reduxjs/toolkit'
+import { ThunkConfig } from 'app/providers/StoreProvider'
+import { getArticleDetailsData } from 'entities/Article/model/selectors/articleDetails'
+import { Comment } from 'entities/Comment'
+import { getUserAuthData } from 'entities/User'
+import { fetchCommentsByArticleId } from 'pages/ArticleDetailsPage/model/services/fetchCommentsByArticleId/fetchCommentsByArticleId'
 
 export const fetchSendComment = createAsyncThunk<Comment, string, ThunkConfig<string>>(
   'addCommentForm/sendComment',
-  async (text, {dispatch, rejectWithValue, extra, getState}) => {
+  async (text, { dispatch, rejectWithValue, extra, getState }) => {
     const userData = getUserAuthData(getState())
     const article = getArticleDetailsData(getState())
 
@@ -21,8 +20,8 @@ export const fetchSendComment = createAsyncThunk<Comment, string, ThunkConfig<st
         articleId: article.id,
         userId: userData.id,
         text
-      });
-      if(!response.data) {
+      })
+      if (!response.data) {
         throw new Error()
       }
       dispatch(fetchCommentsByArticleId(article.id))

@@ -12,7 +12,7 @@ export interface TabItem<T extends string> {
 
 interface TabsProps<T extends string> {
   className?: string
-  tabs: TabItem<T>[]
+  tabs: Array<TabItem<T>>
   value: T
   onTabClick: (tab: T) => void
 }

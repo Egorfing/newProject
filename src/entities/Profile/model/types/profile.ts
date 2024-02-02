@@ -1,7 +1,6 @@
 import { Country } from 'entities/Country'
 import { Currency } from 'entities/Currency'
 
-
 export enum ValidateProfileError {
   INCORRECT_USER_DATA = 'INCORRECT_USER_DATA',
   INCORRECT_AGE = 'INCORRECT_AGE',

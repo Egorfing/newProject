@@ -7,7 +7,7 @@ export interface CounterState {
 }
 
 const initialState: CounterSchema = {
-  value: 0,
+  value: 0
 }
 
 export const counterSlice = createSlice({
@@ -19,8 +19,8 @@ export const counterSlice = createSlice({
     },
     decrement: (state) => {
       state.value -= 1
-    },
-  },
+    }
+  }
 })
 
 export const { actions: counterActions } = counterSlice
