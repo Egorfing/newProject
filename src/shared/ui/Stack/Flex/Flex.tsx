@@ -1,4 +1,4 @@
-import { ReactNode } from 'react'
+import { DetailedHTMLProps, HTMLAttributes, ReactNode } from 'react'
 import { classNames, Mods } from 'shared/lib/classNames/classNames'
 import cls from './Flex.module.scss'
 
@@ -17,22 +17,27 @@ const justifyClasses: Record<FlexJustify, string> = {
 const alignClasses: Record<FlexAlign, string> = {
   start: cls.alignStart,
   center: cls.alignCenter,
-  end: cls.alignEnd,
+  end: cls.alignEnd
 }
 
 const directionClasses: Record<FlexDirection, string> = {
   row: cls.directionRow,
-  column: cls.directionColumn,
+  column: cls.directionColumn
 }
 
 const gapClasses: Record<FlexGap, string> = {
   4: cls.gap4,
   8: cls.gap8,
   16: cls.gap16,
-  32: cls.gap32,
+  32: cls.gap32
 }
 
-export interface FlexProps {
+type DiveProps = DetailedHTMLProps<
+  HTMLAttributes<HTMLDivElement>,
+  HTMLDivElement
+>
+
+export interface FlexProps extends DiveProps {
   className?: string
   children: ReactNode
   justify?: FlexJustify
@@ -51,7 +56,6 @@ export const Flex = ({
   gap,
   max
 }: FlexProps) => {
-
   const classes = [
     className,
     justifyClasses[justify],
