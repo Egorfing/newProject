@@ -1326,6 +1326,14 @@
   dependencies:
     "@hapi/hoek" "^9.0.0"
 
+"@headlessui/react@^1.7.18":
+  "integrity" "sha512-4i5DOrzwN4qSgNsL4Si61VMkUcWbcSKueUV7sFhpHzQcSShdlHENE5+QBntMSRvHt8NyoFO2AGG8si9lq+w4zQ=="
+  "resolved" "https://registry.npmjs.org/@headlessui/react/-/react-1.7.18.tgz"
+  "version" "1.7.18"
+  dependencies:
+    "@tanstack/react-virtual" "^3.0.0-beta.60"
+    "client-only" "^0.0.1"
+
 "@humanwhocodes/config-array@^0.11.10":
   "integrity" "sha512-KVVjQmNUepDVGXNuoRRdmmEjruj0KfiGSbS8LVc12LMsWDQzRXJ0qdhN8L8uUigKpfEHRhlaQFY0ib1tnUbNeQ=="
   "resolved" "https://registry.npmjs.org/@humanwhocodes/config-array/-/config-array-0.11.10.tgz"
@@ -2996,6 +3004,18 @@
     "@svgr/core" "^6.2.1"
     "@svgr/plugin-jsx" "^6.2.1"
     "@svgr/plugin-svgo" "^6.2.0"
+
+"@tanstack/react-virtual@^3.0.0-beta.60":
+  "integrity" "sha512-9XbRLPKgnhMwwmuQMnJMv+5a9sitGNCSEtf/AZXzmJdesYk7XsjYHaEDny+IrJzvPNwZliIIDwCRiaUqR3zzCA=="
+  "resolved" "https://registry.npmjs.org/@tanstack/react-virtual/-/react-virtual-3.0.2.tgz"
+  "version" "3.0.2"
+  dependencies:
+    "@tanstack/virtual-core" "3.0.0"
+
+"@tanstack/virtual-core@3.0.0":
+  "integrity" "sha512-SYXOBTjJb05rXa2vl55TTwO40A6wKu0R5i1qQwhJYNDIqaIGF7D0HsLw+pJAyi2OvntlEIVusx3xtbbgSUi6zg=="
+  "resolved" "https://registry.npmjs.org/@tanstack/virtual-core/-/virtual-core-3.0.0.tgz"
+  "version" "3.0.0"
 
 "@testing-library/dom@^8.0.0", "@testing-library/dom@^8.3.0":
   "integrity" "sha512-9LId28I+lx70wUiZjLvi1DB/WT2zGOxUh46glrSNMaWVx849kKAluezVzZrXJfTKKoQTmEOutLes/bHg4Bj3aA=="
@@ -5480,6 +5500,11 @@
   dependencies:
     "slice-ansi" "^3.0.0"
     "string-width" "^4.2.0"
+
+"client-only@^0.0.1":
+  "integrity" "sha512-IV3Ou0jSMzZrd3pZ48nLkT9DA7Ag1pnPzaiQhpW7c3RbcqqzvzzVu+L8gfqMp/8IM2MQtSiqaCxrrcfu8I8rMA=="
+  "resolved" "https://registry.npmjs.org/client-only/-/client-only-0.0.1.tgz"
+  "version" "0.0.1"
 
 "cliui@^7.0.2":
   "integrity" "sha512-OcRE68cOsVMXp1Yvonl/fzkQOyjLSu/8bhPDfQt0e0/Eb283TKP20Fs2MqoPsr9SwA595rRCA+QMzYc9nBP+JQ=="

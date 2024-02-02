@@ -120,18 +120,18 @@ export const ProfileCard = ({
         readOnly={readOnly}
         onChange={onChangeAvatar}
       />
-      {/* <CurrencySelect
+      <CurrencySelect
           className={cls.input}
           value={data?.currency}
           onChange={onChangeCurrency}
           readonly={readOnly}
-        /> */}
-      {/* <CountrySelect
+        />
+      <CountrySelect
           className={cls.input}
           value={data?.country}
           onChange={onChangeCountry}
           readonly={readOnly}
-        /> */}
+        />
     </VStack>
   )
 }
