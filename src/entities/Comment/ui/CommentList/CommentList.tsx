@@ -16,7 +16,7 @@ export const CommentList = ({ className, comments, isLoading }: CommentListProps
 
   if (isLoading) {
     return (
-    <VStack gap='16' className={classNames('', {}, [className])}>
+    <VStack gap='16' max className={classNames('', {}, [className])}>
       <CommentCard isLoading/>
       <CommentCard isLoading/>
       <CommentCard isLoading/>
@@ -25,7 +25,7 @@ export const CommentList = ({ className, comments, isLoading }: CommentListProps
     )
   }
   return (
-    <VStack gap='16' className={classNames('', {}, [className])}>
+    <VStack gap='16' max className={classNames('', {}, [className])}>
       {comments.length
         ? comments.map(comment => <CommentCard key={comment.id} comment={comment}/>)
         : <Text title={t('Комментарии отсутствуют')}/>}

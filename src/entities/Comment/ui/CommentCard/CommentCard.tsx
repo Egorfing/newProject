@@ -22,13 +22,13 @@ export const CommentCard = ({
 }: CommentCardProps) => {
   if (isLoading) {
     return (
-      <div className={classNames(cls.CommentCard, { [cls.loading]: isLoading }, [className])}>
+      <VStack gap={'8'} max className={classNames(cls.CommentCard, { [cls.loading]: isLoading }, [className])}>
         <div className={cls.header}>
           <Skeleton width={30} height={30} border={'50%'} />
           <Skeleton className={cls.userName} width={100} height={16}/>
         </div>
           <Skeleton className={cls.text} width={'100%'} height={50} />
-      </div>
+      </VStack>
     )
   }
   if (!comment) {
