@@ -7,20 +7,22 @@ import {
   StateSchema,
   StoreProvider
 } from '../../../../app/providers/StoreProvider'
+import { ReducersMapObject } from '@reduxjs/toolkit'
 
 export interface componentRenderOptions {
   route?: string
   initialState?: DeepPartial<StateSchema>
+  asyncReducers?: DeepPartial<ReducersMapObject<StateSchema>>
 }
 
 export function componentRender(
   component: ReactNode,
   options: componentRenderOptions = {}
 ) {
-  const { route = '/', initialState } = options
+  const { route = '/', initialState, asyncReducers } = options
   return render(
     <MemoryRouter initialEntries={[route]}>
-      <StoreProvider initialState={initialState}>
+      <StoreProvider asyncReducers={asyncReducers} initialState={initialState}>
         <I18nextProvider i18n={i18nForTests}>{component}</I18nextProvider>
       </StoreProvider>
     </MemoryRouter>

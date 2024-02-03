@@ -18,7 +18,10 @@ import {
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect'
 import { profileActions, profileReducer } from '../../model/slice/profileSlice'
 import { ValidateProfileError } from 'features/editableProfileCard/model/types/editableProfileCardSchema'
-import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
+import {
+  DynamicModuleLoader,
+  ReducersList
+} from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 import { fetchProfileData } from '../../model/services/fetchProfileData/fetchProfileData'
 import { VStack } from 'shared/ui/Stack'
 import { EditableProfileCardHeader } from '../EditableProfileCardHeader/EditableProfileCardHeader'
@@ -29,8 +32,8 @@ interface EditableProfileCardProps {
 }
 
 const reducers: ReducersList = {
-    profile: profileReducer
-  }
+  profile: profileReducer
+}
 
 export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
   const { className, id } = props
@@ -111,14 +114,15 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
 
   return (
     <DynamicModuleLoader reducers={reducers}>
-      <VStack gap='8' max className={classNames('', {}, [className])}>
-          <EditableProfileCardHeader />
+      <VStack gap="8" max className={classNames('', {}, [className])}>
+        <EditableProfileCardHeader />
         {validateErrors?.length &&
           validateErrors.map((err) => (
             <Text
               key={err}
               theme={TextTheme.ERROR}
               text={validateErrorTranslates[err]}
+              data-testid={'EditableProfileCard.Error'}
             />
           ))}
         <ProfileCard
