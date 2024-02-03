@@ -1,9 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
 import { USER_LOCALSTORAGE_KEY } from 'shared/const/localstorage'
-import { Profile, ProfileSchema } from '../types/profile'
-import { fetchProfileData } from '../../services/fetchProfileData/fetchProfileData'
-import { updateProfileData } from '../../services/updateProfileData/updateProfileData'
+import { fetchProfileData } from '../../../../features/editableProfileCard/model/services/fetchProfileData/fetchProfileData'
+import { updateProfileData } from '../../../../features/editableProfileCard/model/services/updateProfileData/updateProfileData'
+import { ProfileSchema } from '../types/editableProfileCardSchema'
+import { Profile } from 'entities/Profile'
 
 export interface UserState {}
 

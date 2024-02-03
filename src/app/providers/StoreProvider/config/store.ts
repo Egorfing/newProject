@@ -2,6 +2,7 @@ import { CombinedState, configureStore, Reducer, ReducersMapObject } from '@redu
 import { userReducer } from 'entities/User'
 import { uiReducer } from 'features/UI'
 import { $api } from 'shared/api/api'
+import { rtkApi } from 'shared/api/rtkApi'
 import { counterReducer } from '../../../../entities/Counter'
 import { createReducerManager } from './reducerManager'
 import { StateSchema } from './StateSchema'
@@ -14,7 +15,8 @@ export function createReduxStore(
     ...asyncReducers,
     counter: counterReducer,
     user: userReducer,
-    ui: uiReducer
+    ui: uiReducer,
+    [rtkApi.reducerPath]: rtkApi.reducer
   }
 
   const reducerManager = createReducerManager(rootReducer)
@@ -29,7 +31,7 @@ export function createReduxStore(
           api: $api
         }
       }
-    })
+    }).concat(rtkApi.middleware)
   })
 
   // @ts-expect-error

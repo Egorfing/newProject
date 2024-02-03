@@ -7,19 +7,21 @@ import {
 } from '@reduxjs/toolkit'
 import { AxiosInstance } from 'axios'
 import { ArticleDetailsSchema } from 'entities/Article'
-import { ProfileSchema } from 'entities/Profile'
 import { UserSchema } from 'entities/User'
 import { AddCommentFormSchema } from 'features/AddCommentForm'
 import { LoginSchema } from 'features/AuthByUsername'
+import { ProfileSchema } from 'features/editableProfileCard'
 import { UISchema } from 'features/UI'
 import { ArticleDetailsCommentsSchema, ArticleDetailsPageSchema, ArticleDetailsRecommendationSchema } from 'pages/ArticleDetailsPage'
 import { ArticlePageSchema } from 'pages/ArticlesPage'
+import { rtkApi } from 'shared/api/rtkApi'
 import { CounterSchema } from '../../../../entities/Counter'
 
 export interface StateSchema {
   counter: CounterSchema
   user: UserSchema
   ui: UISchema
+  [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>
 
   // Асинхронные редьюсеры
   loginForm?: LoginSchema
