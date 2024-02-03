@@ -1,5 +1,5 @@
 export { EditableProfileCard } from './ui/EditableProfileCard/EditableProfileCard'
-export { ProfileSchema } from '../editableProfileCard/model/types/editableProfileCardSchema'
+export type { ProfileSchema } from '../editableProfileCard/model/types/editableProfileCardSchema'
 export { profileActions, profileReducer } from './model/slice/profileSlice'
 export { fetchProfileData } from '../../features/editableProfileCard/model/services/fetchProfileData/fetchProfileData'
 export { updateProfileData } from '../../features/editableProfileCard/model/services/updateProfileData/updateProfileData'

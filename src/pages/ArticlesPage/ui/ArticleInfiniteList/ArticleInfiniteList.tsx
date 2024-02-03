@@ -1,7 +1,6 @@
 import { useSelector } from 'react-redux'
 import { useSearchParams } from 'react-router-dom'
-import { ArticleList, ArticleSortField } from 'entities/Article'
-import { ArticleType } from 'entities/Article/model/types/article'
+import { ArticleList, ArticleSortField, ArticleType } from 'entities/Article'
 import {
   getArticlesInited,
   getArticlesPageErrors,

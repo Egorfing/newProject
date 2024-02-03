@@ -25,12 +25,12 @@ import EyeIcon from 'shared/assets/icons/EyeIcon.svg'
 import { Icon } from 'shared/Icon/Icon'
 import {
   ArticleBlock,
-  ArticleBlockType
 } from 'entities/Article/model/types/article'
 import { ArticleCodeBlockComponent } from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent'
 import { ArticleImageBlockComponent } from '../ArticleImageBlockComponent/ArticleImageBlockComponent'
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent'
 import { HStack, VStack } from 'shared/ui/Stack'
+import { ArticleBlockType } from 'entities/Article/model/constants/articleConstants'
 
 interface ArticleDetailsProps {
   className?: string

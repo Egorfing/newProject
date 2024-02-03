@@ -1,7 +1,5 @@
-import { ArticleSortField, ArticleView } from 'entities/Article'
-import { ArticleType } from 'entities/Article/model/types/article'
+import { ArticleSortField, ArticleType, ArticleView } from 'entities/Article'
 import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk/TestAsyncThunk'
-import { addQueryParams } from 'shared/lib/url/addQueryParams/addQueryParams'
 import { fetchArticleList } from './fetchArticleList'
 import { fetchNextArticlePage } from './fetchNextArticlePage'
 

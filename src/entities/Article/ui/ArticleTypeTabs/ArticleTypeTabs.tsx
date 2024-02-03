@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux'
 
 import { getArticlesType } from 'pages/ArticlesPage/model/selectors/getArticlePageSelectors'
 import { TabItem, Tabs } from 'shared/ui/Tabs/Tabs'
-import { ArticleType } from '../../model/types/article'
+import { ArticleType } from 'entities/Article/model/constants/articleConstants'
 
 interface ArticleTypeTabsProps {
   className?: string

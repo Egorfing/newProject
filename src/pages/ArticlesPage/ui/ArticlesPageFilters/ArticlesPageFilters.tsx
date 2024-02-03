@@ -5,10 +5,10 @@ import cls from './ArticlesPageFilters.module.scss'
 
 import {
   ArticleSortField,
+  ArticleType,
   ArticleView,
   ArticleViewSelector
 } from 'entities/Article'
-import { ArticleType } from 'entities/Article/model/types/article'
 import { ArticleSortSelector } from 'entities/Article/ui/ArticleSortSelector/ArticleSortSelector'
 import { ArticleTypeTabs } from 'entities/Article/ui/ArticleTypeTabs/ArticleTypeTabs'
 import { fetchArticleList } from 'pages/ArticlesPage/model/services/fetchArticleList'

@@ -1,4 +1,5 @@
 import { User } from 'entities/User'
+import { ArticleBlockType, ArticleType } from '../constants/articleConstants'
 
 export interface Article {
   id: string
@@ -16,31 +17,9 @@ export type ArticleBlock =
   | ArticleImageBlock
   | ArticleCodeBlock
 
-export enum ArticleSortField {
-  VIEWS = 'views',
-  TITLE = 'title',
-  CREATED = 'createdAt'
-}
-export enum ArticleType {
-  ALL = 'ALL',
-  IT = 'IT',
-  SCIENCE = 'SCIENCE',
-  ECONOMICS = 'ECONOMICS'
-}
-
-export enum ArticleBlockType {
-  TEXT = 'TEXT',
-  CODE = 'CODE',
-  IMAGE = 'IMAGE'
-}
-
 interface ArticleBlockBase {
   id: string
   type: ArticleBlockType
-}
-export enum ArticleView {
-  BIG = 'BIG',
-  SMALL = 'SMALL'
 }
 
 export interface ArticleTextBlock extends ArticleBlockBase {

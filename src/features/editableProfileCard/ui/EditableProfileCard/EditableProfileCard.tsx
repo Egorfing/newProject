@@ -17,7 +17,6 @@ import {
 } from '../../model/selectors/getProfileState'
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect'
 import { profileActions, profileReducer } from '../../model/slice/profileSlice'
-import { ValidateProfileError } from 'features/editableProfileCard/model/types/editableProfileCardSchema'
 import {
   DynamicModuleLoader,
   ReducersList
@@ -25,6 +24,7 @@ import {
 import { fetchProfileData } from '../../model/services/fetchProfileData/fetchProfileData'
 import { VStack } from 'shared/ui/Stack'
 import { EditableProfileCardHeader } from '../EditableProfileCardHeader/EditableProfileCardHeader'
+import { ValidateProfileError } from 'features/editableProfileCard/model/constants/profileConstants'
 
 interface EditableProfileCardProps {
   className?: string
