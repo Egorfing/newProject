@@ -98,7 +98,9 @@
   },
   "dependencies": {
     "@headlessui/react": "^1.7.18",
+    "@react-spring/web": "^9.7.3",
     "@reduxjs/toolkit": "^1.8.0",
+    "@use-gesture/react": "^10.3.0",
     "axios": "^1.5.1",
     "concurrently": "^8.2.2",
     "eslint-config-standard-with-typescript": "^36.0.0",

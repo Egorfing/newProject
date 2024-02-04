@@ -5,7 +5,7 @@
   left: 0;
   right: 0;
   opacity: 0;
-  z-index: -1;
+  z-index: 100;
   pointer-events: none;
   display: flex;
   align-items: flex-end;
@@ -53,4 +53,16 @@
   .content {
       transform: translateY(100%);
   }
+}
+
+.sheet {
+  z-index: var(--modal-z-index);
+  position: fixed;
+  left: 2vw;
+  height: calc(100vh + 100px);
+  width: 96vw;
+  border-radius: 12px 12px 0;
+  background: var(--bg-color);
+  touch-action: none;
+  padding: 15px;
 }
