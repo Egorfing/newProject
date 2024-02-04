@@ -7,6 +7,7 @@ import React, {
   useState
 } from 'react'
 import { classNames, Mods } from '../../../shared/lib/classNames/classNames'
+import { Overlay } from '../Overlay'
 import { Portal } from '../Portal/Portal'
 import cls from './Modal.module.scss'
 
@@ -46,9 +47,6 @@ export const Modal = ({
     }
   }, [onClose])
 
-  const onContentClick = useCallback((e: React.MouseEvent) => {
-    e.stopPropagation()
-  }, [])
   const onKeyDown = useCallback(
     (e: KeyboardEvent) => {
       if (e.key === 'Escape') onCloseHandler()
@@ -75,12 +73,11 @@ export const Modal = ({
   return (
     <Portal>
       <div className={classNames(cls.Modal, mods, [className])}>
-        <div className={cls.overlay} onClick={onCloseHandler}>
-          <div className={cls.content} onClick={onContentClick}>
+        <Overlay onClick={onCloseHandler}/>
+          <div className={cls.content}>
             {children}
           </div>
         </div>
-      </div>
     </Portal>
   )
 }
