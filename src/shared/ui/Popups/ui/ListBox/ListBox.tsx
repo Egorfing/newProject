@@ -1,25 +1,19 @@
 import { Listbox as HListBox } from '@headlessui/react'
 import { Fragment, ReactNode } from 'react'
 
+import cls from './ListBox.module.scss'
+import popupCls from '../../styles/popup.module.scss'
+
 import { classNames } from 'shared/lib/classNames/classNames'
 import { DropdownDirection } from 'shared/types/ui'
-import { Button } from '../Button/Button'
-import { HStack } from '../Stack'
-import cls from './ListBox.module.scss'
+import { Button } from '../../../Button/Button'
+import { HStack } from '../../../Stack'
+import { mapDirectionClass } from '../../styles/consts'
 
 export type ListBoxItem = {
   value: string
   content: ReactNode
   disabled?: boolean
-}
-
-
-
-const mapDirectionClass: Record<DropdownDirection, string> = {
-  'bottom left': cls.optionsBottomLeft,
-  'bottom right': cls.optionsBottomRight,
-  'top left': cls.optionsTopLeft,
-  'top right': cls.optionsTopRight,
 }
 
 interface ListBoxProps {
@@ -33,7 +27,7 @@ interface ListBoxProps {
   direction?: DropdownDirection
 }
 
-export function Listbox({
+export function ListBox({
   className,
   items,
   value,
@@ -50,12 +44,12 @@ export function Listbox({
       {label && <span>{`${label}>`}</span>}
       <HListBox
         as={'div'}
-        className={classNames(cls.ListBox, {}, [className])}
+        className={classNames('', {}, [className, popupCls.popup])}
         disabled={readonly}
         value={value}
         onChange={onChange}
       >
-        <HListBox.Button className={cls.trigger}>
+        <HListBox.Button className={popupCls.trigger}>
           <Button disabled={readonly}>{value ?? defaultValue}</Button>
         </HListBox.Button>
         <HListBox.Options
@@ -71,8 +65,8 @@ export function Listbox({
               {({ active, selected }) => (
                 <li
                   className={classNames(cls.item, {
-                    [cls.active]: active,
-                    [cls.disabled]: item.disabled
+                    [popupCls.active]: active,
+                    [popupCls.disabled]: item.disabled
                   })}
                 >
                   {selected && '!!!'}
