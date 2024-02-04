@@ -8,7 +8,7 @@ import './shared/config/i18n/i18n'
 import { ErrorBoundary } from './app/providers/ErrorBoundary'
 import { StoreProvider } from './app/providers/StoreProvider'
 
-const container = document.getElementById('app');
+const container = document.getElementById('root');
 
 if(!container) {
   throw new Error('Контейнер root не найден')
