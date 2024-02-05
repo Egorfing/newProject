@@ -6,7 +6,10 @@ import { useTheme } from '@/app/providers/ThemeProvider'
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { Portal } from '@/shared/ui/Portal/Portal'
 import { Overlay } from '@/shared/ui/Overlay'
-import { useAnimationLibs } from '@/shared/lib/components/AnimationProvider'
+import {
+  AnimationProvider,
+  useAnimationLibs
+} from '@/shared/lib/components/AnimationProvider'
 
 interface DrawerProps {
   className?: string
@@ -18,9 +21,8 @@ interface DrawerProps {
 const height = window.innerHeight - 100
 const DrawerContent = memo(
   ({ className, children, isOpen, onClose, lazy }: DrawerProps) => {
-    
     const { theme } = useTheme()
-    const {Spring, Gesture} = useAnimationLibs()
+    const { Spring, Gesture } = useAnimationLibs()
 
     const [{ y }, api] = Spring.useSpring(() => ({ y: height }))
     const openDrawer = useCallback(() => {
@@ -91,8 +93,18 @@ const DrawerContent = memo(
   }
 )
 
-export const Drawer = memo((props: DrawerProps) => {
-  const {isLoaded} = useAnimationLibs()
-  if(!isLoaded) return null
-  return <DrawerContent {...props}/>
-})
+const DrawerAsync = (props: DrawerProps) => {
+  const { isLoaded } = useAnimationLibs()
+  if (!isLoaded) return null
+  return <DrawerContent {...props} />
+}
+
+export const Drawer = (props: DrawerProps) => {
+  const { isLoaded } = useAnimationLibs()
+  if (!isLoaded) return null
+  return (
+    <AnimationProvider>
+      <DrawerAsync {...props} />
+    </AnimationProvider>
+  )
+}
