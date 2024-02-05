@@ -1,6 +1,5 @@
-import { HTMLAttributeAnchorTarget, memo, useCallback } from 'react'
+import { HTMLAttributeAnchorTarget, memo } from 'react'
 import { useTranslation } from 'react-i18next'
-import { useNavigate } from 'react-router-dom'
 
 import cls from './ArticleItem.module.scss'
 
@@ -59,10 +58,10 @@ export const ArticleItem = memo(
             <div className={cls.header}>
               <Avatar
                 size={30}
-                src={article.user.avatar}
+                src={article.user?.avatar}
                 className={cls.avatar}
               />
-              <Text text={article.user.username} className={cls.username} />
+              <Text text={article.user?.username} className={cls.username} />
               {date}
             </div>
             {title}

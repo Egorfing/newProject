@@ -1,4 +1,6 @@
-import { classNames } from '@/shared/lib/classNames/classNames'
+import { memo, useCallback, useState } from 'react'
+import { BrowserView, MobileView } from 'react-device-detect'
+import { useTranslation } from 'react-i18next'
 import { Button, ThemeButton } from '@/shared/ui/Button/Button'
 import { Card } from '@/shared/ui/Card/Card'
 import { Drawer } from '@/shared/ui/Drawer'
@@ -7,10 +9,6 @@ import { Modal } from '@/shared/ui/Modal/Modal'
 import { HStack, VStack } from '@/shared/ui/Stack'
 import { StarRating } from '@/shared/ui/StarRating'
 import { Text } from '@/shared/ui/Text/Text'
-import { memo, useCallback, useState } from 'react'
-import { BrowserView, MobileView } from 'react-device-detect'
-import { useTranslation } from 'react-i18next'
-import cls from './RatingCard.module.scss'
 
 interface RatingCardProps {
   className?: string
@@ -19,6 +17,7 @@ interface RatingCardProps {
   hasFeedback?: boolean
   onCancel?: (starsCount: number) => void
   onAccept?: (starsCount: number, feedback?: string) => void
+  rate?: number
 }
 
 export const RatingCard = memo(
@@ -28,11 +27,12 @@ export const RatingCard = memo(
     feedbackTitle,
     hasFeedback,
     onCancel,
-    onAccept
+    onAccept,
+    rate = 0
   }: RatingCardProps) => {
     const { t } = useTranslation()
     const [isModalOpen, setIsModalOpen] = useState(false)
-    const [starCount, setStarCount] = useState(0)
+    const [starCount, setStarCount] = useState(rate)
     const [feedback, setFeedback] = useState('')
 
     const onSelectStars = useCallback(
@@ -68,10 +68,10 @@ export const RatingCard = memo(
       </>
     )
     return (
-      <Card className={classNames(cls.RatingCard, {}, [className])}>
-        <VStack align="center" gap="8">
-          {title && <Text title={title} />}
-          <StarRating size={40} onSelect={onSelectStars} />
+      <Card className={className} max>
+        <VStack align="center" gap="8" max>
+          <Text title={starCount ? t('Спасибо за оценку') : title} />
+          <StarRating selectedStars={starCount} size={40} onSelect={onSelectStars} />
         </VStack>
         <BrowserView>
           <Modal isOpen={isModalOpen} lazy>
