@@ -5,32 +5,32 @@ import { useTranslation } from 'react-i18next'
 import cls from './ArticleDetails.module.scss'
 
 import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice'
-import { classNames } from 'shared/lib/classNames/classNames'
+import { classNames } from '@/shared/lib/classNames/classNames'
 import {
   DynamicModuleLoader,
   ReducersList
-} from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
-import { fetchArticleById } from 'entities/Article/model/services/fetchArticleById'
+} from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
+import { fetchArticleById } from '@/entities/Article/model/services/fetchArticleById'
 import {
   getArticleDetailsData,
   getArticleDetailsError,
   getArticleDetailsIsLoading
-} from 'entities/Article/model/selectors/articleDetails'
-import { Text, TextAlign, TextSize } from 'shared/ui/Text/Text'
-import { Skeleton } from 'shared/ui/Skeleton/Skeleton'
-import { Avatar } from 'shared/ui/Avatar/Avatar'
-import CalendarIcon from 'shared/assets/icons/CalendarIcon.svg'
-import EyeIcon from 'shared/assets/icons/EyeIcon.svg'
-import { Icon } from 'shared/Icon/Icon'
+} from '@/entities/Article/model/selectors/articleDetails'
+import { Text, TextAlign, TextSize } from '@/shared/ui/Text/Text'
+import { Skeleton } from '@/shared/ui/Skeleton/Skeleton'
+import { Avatar } from '@/shared/ui/Avatar/Avatar'
+import CalendarIcon from '@/shared/assets/icons/CalendarIcon.svg'
+import EyeIcon from '@/shared/assets/icons/EyeIcon.svg'
+import { Icon } from '@/shared/Icon/Icon'
 import {
   ArticleBlock,
-} from 'entities/Article/model/types/article'
+} from '@/entities/Article/model/types/article'
 import { ArticleCodeBlockComponent } from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent'
 import { ArticleImageBlockComponent } from '../ArticleImageBlockComponent/ArticleImageBlockComponent'
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent'
-import { HStack, VStack } from 'shared/ui/Stack'
-import { ArticleBlockType } from 'entities/Article/model/constants/articleConstants'
+import { HStack, VStack } from '@/shared/ui/Stack'
+import { ArticleBlockType } from '@/entities/Article/model/constants/articleConstants'
 
 interface ArticleDetailsProps {
   className?: string

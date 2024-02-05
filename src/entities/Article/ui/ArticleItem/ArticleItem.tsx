@@ -4,21 +4,21 @@ import { useNavigate } from 'react-router-dom'
 
 import cls from './ArticleItem.module.scss'
 
-import { classNames } from 'shared/lib/classNames/classNames'
-import { Text } from 'shared/ui/Text/Text'
-import { Icon } from 'shared/Icon/Icon'
-import EyeIcon from 'shared/assets/icons/EyeIcon.svg'
-import { Card } from 'shared/ui/Card/Card'
-import { Avatar } from 'shared/ui/Avatar/Avatar'
-import { Button, ThemeButton } from 'shared/ui/Button/Button'
+import { classNames } from '@/shared/lib/classNames/classNames'
+import { Text } from '@/shared/ui/Text/Text'
+import { Icon } from '@/shared/Icon/Icon'
+import EyeIcon from '@/shared/assets/icons/EyeIcon.svg'
+import { Card } from '@/shared/ui/Card/Card'
+import { Avatar } from '@/shared/ui/Avatar/Avatar'
+import { Button, ThemeButton } from '@/shared/ui/Button/Button'
 import {
   Article,
   ArticleTextBlock,
 } from '../../model/types/article'
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent'
-import { RoutePath } from 'shared/config/routeConfig/routeConfig'
-import { AppLink } from 'shared/ui/AppLink/AppLink'
-import { ArticleBlockType, ArticleView } from 'entities/Article/model/constants/articleConstants'
+import { RoutePath } from '@/shared/config/routeConfig/routeConfig'
+import { AppLink } from '@/shared/ui/AppLink/AppLink'
+import { ArticleBlockType, ArticleView } from '@/entities/Article/model/constants/articleConstants'
 
 interface ArticleItemProps {
   className?: string

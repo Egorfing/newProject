@@ -3,7 +3,7 @@ import { memo, useCallback } from 'react'
 import cls from './Code.module.scss'
 
 import { Button, ThemeButton } from '../Button/Button'
-import CopyIcon from 'shared/assets/icons/CopyIcon.svg'
+import CopyIcon from '@/shared/assets/icons/CopyIcon.svg'
 
 interface CodeProps {
   className?: string

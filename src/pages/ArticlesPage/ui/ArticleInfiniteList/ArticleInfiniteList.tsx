@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux'
 import { useSearchParams } from 'react-router-dom'
-import { ArticleList, ArticleSortField, ArticleType } from 'entities/Article'
+import { ArticleList, ArticleSortField, ArticleType } from '@/entities/Article'
 import {
   getArticlesInited,
   getArticlesPageErrors,
@@ -12,11 +12,11 @@ import {
   articlesPageActions,
   getArticles
 } from '../../model/slice/articlesPageSlice'
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
-import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect'
-import { SortOrder } from 'shared/types'
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
+import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect'
+import { SortOrder } from '@/shared/types'
 import { useTranslation } from 'react-i18next'
-import { Text } from 'shared/ui/Text/Text'
+import { Text } from '@/shared/ui/Text/Text'
 
 interface ArticleInfiniteListProps {
   className?: string

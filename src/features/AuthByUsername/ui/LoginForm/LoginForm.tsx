@@ -1,26 +1,26 @@
-import { ReduxStoreWithManager } from 'app/providers/StoreProvider/config/StateSchema'
+import { ReduxStoreWithManager } from '@/app/providers/StoreProvider/config/StateSchema'
 import {
   getLoginError,
   getLoginIsLoading,
   getLoginPassword,
   getLoginUsername
-} from 'features/AuthByUsername/model/selectors/getLoginState/getLoginState'
-import { loginByUsername } from 'features/AuthByUsername/model/services/loginByUsername/loginByUsername'
+} from '@/features/AuthByUsername/model/selectors/getLoginState/getLoginState'
+import { loginByUsername } from '@/features/AuthByUsername/model/services/loginByUsername/loginByUsername'
 import {
   loginActions,
   loginReducer
-} from 'features/AuthByUsername/model/slice/loginSlice'
+} from '@/features/AuthByUsername/model/slice/loginSlice'
 import { memo, useCallback, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSelector, useStore } from 'react-redux'
 import {
   DynamicModuleLoader,
   ReducersList
-} from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
-import { Button, ThemeButton } from 'shared/ui/Button/Button'
-import { Input } from 'shared/ui/Input/Input'
-import { Text, TextTheme } from 'shared/ui/Text/Text'
+} from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
+import { Button, ThemeButton } from '@/shared/ui/Button/Button'
+import { Input } from '@/shared/ui/Input/Input'
+import { Text, TextTheme } from '@/shared/ui/Text/Text'
 import { classNames } from '../../../../shared/lib/classNames/classNames'
 import cls from './LoginForm.module.scss'
 

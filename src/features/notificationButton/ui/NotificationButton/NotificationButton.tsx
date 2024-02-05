@@ -6,15 +6,15 @@ import {
   isMobile
 } from 'react-device-detect'
 
-import { NotificationList } from 'entities/Notification'
-import { Icon } from 'shared/Icon/Icon'
-import { classNames } from 'shared/lib/classNames/classNames'
-import { Button, ThemeButton } from 'shared/ui/Button/Button'
-import { Popover } from 'shared/ui/Popups'
+import { NotificationList } from '@/entities/Notification'
+import { Icon } from '@/shared/Icon/Icon'
+import { classNames } from '@/shared/lib/classNames/classNames'
+import { Button, ThemeButton } from '@/shared/ui/Button/Button'
+import { Popover } from '@/shared/ui/Popups'
 import cls from './NotificationButton.module.scss'
-import Notification from 'shared/assets/icons/Notification.svg'
-import { Drawer } from 'shared/ui/Drawer'
-import { AnimationProvider } from 'shared/lib/components/AnimationProvider'
+import Notification from '@/shared/assets/icons/Notification.svg'
+import { Drawer } from '@/shared/ui/Drawer'
+import { AnimationProvider } from '@/shared/lib/components/AnimationProvider'
 
 interface NotificationButtonProps {
   className?: string
