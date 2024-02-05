@@ -24,7 +24,7 @@ export function Popover({
   const panelClasses = [mapDirectionClass[direction]]
   return (
     <PopoverLib className={classNames('', {}, [className, popupCls.popup])}>
-      <PopoverLib.Button className={popupCls.trigger}>{trigger}</PopoverLib.Button>
+      <PopoverLib.Button as={'div'} className={popupCls.trigger}>{trigger}</PopoverLib.Button>
 
       <PopoverLib.Panel className={classNames(cls.panel, {}, panelClasses)}>
         {children}
