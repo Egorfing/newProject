@@ -15,7 +15,7 @@ import {
   ArticleTextBlock
 } from '../../model/types/article'
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent'
-import { RoutePath } from '@/shared/config/routeConfig/routeConfig'
+import { RoutePath } from '@/app/providers/router/config/routeConfig'
 import { AppLink } from '@/shared/ui/AppLink/AppLink'
 import { ArticleBlockType, ArticleView } from '../../model/constants/articleConstants'
 
