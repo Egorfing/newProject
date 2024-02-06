@@ -41,7 +41,8 @@ module.exports = {
       alias: '@'
     }],
     "plugin-imports/public-api-imports": ["error", {
-      alias: '@'
+      alias: '@',
+      testFilesPatterns: ['**/*.test.*', '**/*.story.*', '**/StoreDecorator.tsx']
     }],
     '@typescript-eslint/no-misused-promises': 'warn',
   },

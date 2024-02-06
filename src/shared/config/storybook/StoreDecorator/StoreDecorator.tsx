@@ -1,17 +1,11 @@
 import { Story } from '@storybook/react'
 import { StateSchema, StoreProvider } from '@/app/providers/StoreProvider'
-// eslint-disable-next-line ulbi-tv-plugin/public-api-imports
 import { ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
-// eslint-disable-next-line ulbi-tv-plugin/public-api-imports
-import { profileReducer } from '@/features/editableProfileCard/model/slice/profileSlice'
-// eslint-disable-next-line ulbi-tv-plugin/public-api-imports
-import { loginReducer } from '@/features/AuthByUsername/model/slice/loginSlice'
-// eslint-disable-next-line ulbi-tv-plugin/public-api-imports
-import { addCommentFormReducer } from '@/features/AddCommentForm/model/slice/addCommentFormSlice'
-// eslint-disable-next-line ulbi-tv-plugin/public-api-imports
-import { articleDetailsReducer } from '@/entities/Article/model/slice/articleDetailsSlice'
-// eslint-disable-next-line ulbi-tv-plugin/public-api-imports
-import { articleDetailsPageReducer } from '@/pages/ArticleDetailsPage/model/slice'
+import { profileReducer } from '@/features/editableProfileCard/testing'
+import { loginReducer } from '@/features/AuthByUsername/testing'
+import { addCommentFormReducer } from '@/features/AddCommentForm/testing'
+import { articleDetailsReducer } from '@/entities/Article/testing'
+import { articleDetailsPageReducer } from '@/pages/ArticleDetailsPage/testing'
 
 const defaultAsyncReducers: ReducersList = {
   loginForm: loginReducer,

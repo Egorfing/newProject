@@ -13,11 +13,11 @@ import { Button, ThemeButton } from '@/shared/ui/Button/Button'
 import {
   Article,
   ArticleTextBlock
-} from '@/entities/Article/model/types/article'
+} from '../../model/types/article'
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent'
 import { RoutePath } from '@/shared/config/routeConfig/routeConfig'
 import { AppLink } from '@/shared/ui/AppLink/AppLink'
-import { ArticleBlockType, ArticleView } from '@/entities/Article/model/constants/articleConstants'
+import { ArticleBlockType, ArticleView } from '../../model/constants/articleConstants'
 
 interface ArticleItemProps {
   className?: string
