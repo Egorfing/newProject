@@ -6,7 +6,7 @@ import { getUserAuthData, isUserAdmin, isUserManager, userActions } from '@/enti
 import { useCallback } from 'react'
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
 import { Avatar } from '@/shared/ui/Avatar/Avatar'
-import { RoutePath } from '@/shared/const/router'
+import { getRoutAdmin, getRoutProfile } from '@/shared/const/router'
 
 interface AvatarDropdownProps {
   className?: string
@@ -37,13 +37,13 @@ export const AvatarDropdown = ({ className }: AvatarDropdownProps) => {
           ? [
               {
                 content: t('Админка'),
-                href: RoutePath.admin_panel
+                href: getRoutAdmin()
               }
             ]
           : []),
         {
           content: t('Профиль'),
-          href: RoutePath.profile + authData.id
+          href: getRoutProfile(authData.id)
         },
         {
           content: t('Выйти'),

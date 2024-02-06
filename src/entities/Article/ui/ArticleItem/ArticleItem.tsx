@@ -11,7 +11,7 @@ import { Card } from '@/shared/ui/Card/Card'
 import { Avatar } from '@/shared/ui/Avatar/Avatar'
 import { Button, ThemeButton } from '@/shared/ui/Button/Button'
 import { AppLink } from '@/shared/ui/AppLink/AppLink'
-import { RoutePath } from '@/shared/const/router'
+import { getRoutArticleDetails } from '@/shared/const/router'
 import {
   Article,
   ArticleTextBlock
@@ -73,7 +73,7 @@ export const ArticleItem = memo(
               />
             )}
             <div className={cls.footer}>
-              <AppLink target={target} to={RoutePath.article_details + article.id}>
+              <AppLink target={target} to={getRoutArticleDetails(article.id)}>
                 <Button theme={ThemeButton.OUTLINE}>
                   {t('Читать далее ...')}
                 </Button>
@@ -88,7 +88,7 @@ export const ArticleItem = memo(
       <AppLink
         target={target}
         className={classNames(cls.ArticleItem, {}, [className, cls[view]])}
-        to={RoutePath.article_details + article.id}
+        to={getRoutArticleDetails(article.id)}
       >
         <Card>
           <div className={cls.imageWrapper}>
