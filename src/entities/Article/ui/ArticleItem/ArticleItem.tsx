@@ -10,14 +10,14 @@ import EyeIcon from '@/shared/assets/icons/EyeIcon.svg'
 import { Card } from '@/shared/ui/Card/Card'
 import { Avatar } from '@/shared/ui/Avatar/Avatar'
 import { Button, ThemeButton } from '@/shared/ui/Button/Button'
+import { AppLink } from '@/shared/ui/AppLink/AppLink'
+import { RoutePath } from '@/shared/const/router'
 import {
   Article,
   ArticleTextBlock
 } from '../../model/types/article'
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent'
-import { AppLink } from '@/shared/ui/AppLink/AppLink'
 import { ArticleBlockType, ArticleView } from '../../model/constants/articleConstants'
-import { RoutePath } from '@/shared/const/router'
 
 interface ArticleItemProps {
   className?: string
@@ -25,7 +25,6 @@ interface ArticleItemProps {
   view: ArticleView
   target?: HTMLAttributeAnchorTarget
 }
-
 export const ArticleItem = memo(
   ({ className, article, view, target = '_self' }: ArticleItemProps) => {
     const { t } = useTranslation()

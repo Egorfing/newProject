@@ -10,8 +10,9 @@ module.exports = {
     project: './tsconfig.json',
     tsconfigRootDir: __dirname
   },
-  plugins: ['react', 'i18next', 'react-hooks', 'plugin-imports'],
+  plugins: ['react', 'i18next', 'react-hooks', 'plugin-imports', 'unused-imports'],
   rules: {
+    "unused-imports/no-unused-imports": "error",
     '@typescript-eslint/space-before-function-paren': 'off',
     '@typescript-eslint/consistent-type-imports': "off",
     "@typescript-eslint/restrict-plus-operands": "off",

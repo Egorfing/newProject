@@ -1,9 +1,7 @@
 import { useCallback, useState } from 'react'
 import {
   BrowserView,
-  MobileView,
-  isBrowser,
-  isMobile
+  MobileView
 } from 'react-device-detect'
 
 import { NotificationList } from '@/entities/Notification'
@@ -14,7 +12,6 @@ import { Popover } from '@/shared/ui/Popups'
 import cls from './NotificationButton.module.scss'
 import Notification from '@/shared/assets/icons/Notification.svg'
 import { Drawer } from '@/shared/ui/Drawer'
-import { AnimationProvider } from '@/shared/lib/components/AnimationProvider'
 
 interface NotificationButtonProps {
   className?: string

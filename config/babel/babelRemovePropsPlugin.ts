@@ -1,5 +1,4 @@
 import { PluginItem } from '@babel/core'
-import path from 'path'
 
 export default function(): PluginItem {
   return {
