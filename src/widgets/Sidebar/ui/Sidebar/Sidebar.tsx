@@ -4,11 +4,11 @@ import cls from './Sidebar.module.scss'
 
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { Button, SizeButton, ThemeButton } from '@/shared/ui/Button/Button'
-import { LangSwitcher } from '@/widgets/LangSwitcher/LangSwitcher'
+import { LangSwitcher } from '@/widgets/LangSwitcher'
 import { ThemeSwitcher } from '@/shared/ui/ThemeSwitcher'
 import { SidebarItem } from './SidebarItem/SidebarItem'
 import { useSelector } from 'react-redux'
-import { getSidebarItems } from '@/widgets/Sidebar/model/selectors/getSidebarItems'
+import { getSidebarItems } from '../../model/selectors/getSidebarItems'
 import { VStack } from '@/shared/ui/Stack'
 
 interface SidebarProps {

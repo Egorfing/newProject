@@ -1,5 +1,5 @@
-import { PluginItem } from "@babel/core";
-import path from "path";
+import { PluginItem } from '@babel/core'
+import path from 'path'
 
 export default function(): PluginItem {
   return {
@@ -10,12 +10,12 @@ export default function(): PluginItem {
           JSXIdentifier(current) {
             const nodeName = current.node.name
 
-            if(forbidden.includes(nodeName)) {
+            if (forbidden.includes(nodeName)) {
               current.parentPath.remove()
             }
           }
         })
       }
-    },
-  };
+    }
+  }
 }

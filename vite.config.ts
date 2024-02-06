@@ -6,7 +6,7 @@ import svgr from 'vite-plugin-svgr'
 export default defineConfig({
   plugins: [
     svgr({
-      exportAsDefault: true, // Эта настройка экспортирует SVG как дефолтный экспорт
+      exportAsDefault: true // Эта настройка экспортирует SVG как дефолтный экспорт
     }),
     react()
   ],

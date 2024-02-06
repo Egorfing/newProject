@@ -10,7 +10,7 @@ import { Button } from '../../../Button/Button'
 import { HStack } from '../../../Stack'
 import { mapDirectionClass } from '../../styles/consts'
 
-export type ListBoxItem = {
+export interface ListBoxItem {
   value: string
   content: ReactNode
   disabled?: boolean
@@ -40,7 +40,7 @@ export function ListBox({
   const optionsClasses = [mapDirectionClass[direction]]
 
   return (
-    <HStack gap='4'>
+    <HStack gap="4">
       {label && <span>{`${label}>`}</span>}
       <HListBox
         as={'div'}

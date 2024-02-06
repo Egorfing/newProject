@@ -29,7 +29,7 @@ export const StarRating = memo(
       }
     }
     const onClick = (StarsCount: number) => () => {
-      if(!isSelected) {
+      if (!isSelected) {
         onSelect?.(StarsCount)
         setCurrentStarsCount(StarsCount)
         setIsSelected(true)

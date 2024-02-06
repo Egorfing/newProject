@@ -6,7 +6,6 @@ import cls from './ArticleDetailsComments.module.scss'
 
 import { CommentList } from '@/entities/Comment'
 import { AddCommentForm } from '@/features/AddCommentForm'
-import { fetchSendComment } from '@/features/AddCommentForm/model/services/sendComment/sendComment'
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect'
@@ -16,6 +15,7 @@ import { getArticleCommentsIsLoading } from '../../model/selectors/comments'
 import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId'
 import { fetchArticleRecommendation } from '../../model/services/fetchArticlesRecommendations/fetchArticlesRecommendations'
 import { getArticleComments } from '../../model/slice/articleDetailsCommentsSlice'
+import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle'
 
 interface ArticleDetailsCommentsProps {
   className?: string
@@ -38,7 +38,7 @@ export const ArticleDetailsComments = ({
 
   const onSendComment = useCallback(
     (text: string) => {
-      dispatch(fetchSendComment(text))
+      dispatch(addCommentForArticle(text))
     },
     [dispatch]
   )

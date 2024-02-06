@@ -15,14 +15,14 @@ export function RequireAuth({ children, roles }: RequireAuthProps) {
   const userRoles = useSelector(getUserRoles)
 
   const hasRequiredRole = useMemo(() => {
-    if(!roles) {
+    if (!roles) {
       return true
     }
     return roles.some(requiredRole => {
       const hasRole = userRoles?.includes(requiredRole)
       return hasRole
     })
-  },[roles, userRoles])
+  }, [roles, userRoles])
 
   if (!auth) {
     return <Navigate to={RoutePath.main} state={{ from: location }} replace/>

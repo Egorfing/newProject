@@ -23,7 +23,7 @@ export const NotificationItem = ({
   )
   if (item.href) {
     return (
-      <a className={cls.link} target={'_blank'} href={item.href}>
+      <a className={cls.link} target={'_blank'} href={item.href} rel="noreferrer">
         {content}
       </a>
     )

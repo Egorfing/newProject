@@ -1,7 +1,7 @@
-import { useNotifications } from '@/entities/Notification/api/notificationApi'
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { Skeleton } from '@/shared/ui/Skeleton/Skeleton'
 import { VStack } from '@/shared/ui/Stack'
+import { useNotifications } from '../../api/notificationApi'
 import { NotificationItem } from '../NotificationItem/NotificationItem'
 
 interface NotificationListProps {
@@ -13,8 +13,7 @@ export const NotificationList = ({ className }: NotificationListProps) => {
     pollingInterval: 5000
   })
 
-
-  if(isLoading) {
+  if (isLoading) {
     return (
       <VStack
       gap="16"

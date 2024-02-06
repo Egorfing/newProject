@@ -37,7 +37,12 @@ module.exports = {
     "react-hooks/rules-of-hooks": "error", // Checks rules of Hooks
     "react-hooks/exhaustive-deps": "warn", // Checks effect dependencies
     "no-undef": "off",
-    "plugin-imports/path-checker": "error",
+    "plugin-imports/path-checker": ["error", {
+      alias: '@'
+    }],
+    "plugin-imports/public-api-imports": ["error", {
+      alias: '@'
+    }],
     '@typescript-eslint/no-misused-promises': 'warn',
   },
   globals: {

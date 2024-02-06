@@ -8,7 +8,7 @@ import { ArticleItem } from '../ArticleItem/ArticleItem'
 import { ArticleItemSkeleton } from '../ArticleItem/ArticleItemSkeleton'
 import { useTranslation } from 'react-i18next'
 import { Text, TextSize } from '@/shared/ui/Text/Text'
-import { ArticleView } from '@/entities/Article/model/constants/articleConstants'
+import { ArticleView } from '../../model/constants/articleConstants'
 
 interface ArticleListProps {
   className?: string

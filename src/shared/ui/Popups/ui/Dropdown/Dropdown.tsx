@@ -53,7 +53,7 @@ export function Dropdown({
           if (item.href) {
             return (
               <Menu.Item
-                key={'drop-down'+index}
+                key={'drop-down' + index}
                 as={AppLink}
                 to={item.href}
                 disabled={item.disabled}
@@ -63,7 +63,11 @@ export function Dropdown({
             )
           }
           return (
-            <Menu.Item key={'drop-down'+index} as={Fragment} disabled={item.disabled}>
+            <Menu.Item
+              key={'drop-down' + index}
+              as={Fragment}
+              disabled={item.disabled}
+            >
               {content}
             </Menu.Item>
           )

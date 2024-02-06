@@ -24,7 +24,7 @@ import {
 import { fetchProfileData } from '../../model/services/fetchProfileData/fetchProfileData'
 import { VStack } from '@/shared/ui/Stack'
 import { EditableProfileCardHeader } from '../EditableProfileCardHeader/EditableProfileCardHeader'
-import { ValidateProfileError } from '@/features/editableProfileCard/model/constants/profileConstants'
+import { ValidateProfileError } from '../../model/constants/profileConstants'
 
 interface EditableProfileCardProps {
   className?: string

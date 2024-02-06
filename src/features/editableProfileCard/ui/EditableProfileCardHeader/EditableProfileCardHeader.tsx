@@ -44,7 +44,8 @@ export const EditableProfileCardHeader = ({
       <Text title={t('Профиль')} />
       {canEdit && (
         <>
-          {readOnly ? (
+          {readOnly
+            ? (
             <Button
               theme={ThemeButton.OUTLINE}
               onClick={onEdit}
@@ -52,7 +53,8 @@ export const EditableProfileCardHeader = ({
             >
               {t('Редактировать')}
             </Button>
-          ) : (
+              )
+            : (
             <HStack gap="8">
               <Button
                 theme={ThemeButton.OUTLINE_RED}
@@ -69,7 +71,7 @@ export const EditableProfileCardHeader = ({
                 {t('Сохранить')}
               </Button>
             </HStack>
-          )}
+              )}
         </>
       )}
     </HStack>

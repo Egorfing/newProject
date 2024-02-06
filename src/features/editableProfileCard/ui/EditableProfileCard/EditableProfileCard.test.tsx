@@ -62,7 +62,7 @@ describe('features/EditableProfileCard', () => {
 
     await userEvent.clear(screen.getByTestId('ProfileCard.firstname'))
     await userEvent.clear(screen.getByTestId('ProfileCard.lastname'))
-  
+
     await userEvent.type(screen.getByTestId('ProfileCard.firstname'), 'user')
     await userEvent.type(screen.getByTestId('ProfileCard.lastname'), 'user')
 
@@ -73,8 +73,12 @@ describe('features/EditableProfileCard', () => {
       screen.getByTestId('EditableProfileCardHeader.CancelButton')
     )
 
-    expect(screen.getByTestId('ProfileCard.firstname')).toHaveValue(profile.first)
-    expect(screen.getByTestId('ProfileCard.lastname')).toHaveValue(profile.lastname)
+    expect(screen.getByTestId('ProfileCard.firstname')).toHaveValue(
+      profile.first
+    )
+    expect(screen.getByTestId('ProfileCard.lastname')).toHaveValue(
+      profile.lastname
+    )
   })
 
   test('Должна появиться ошибка', async () => {
@@ -92,7 +96,9 @@ describe('features/EditableProfileCard', () => {
       screen.getByTestId('EditableProfileCardHeader.SaveButton')
     )
 
-    expect(screen.getByTestId('EditableProfileCard.Error.Paragraph')).toBeInTheDocument()
+    expect(
+      screen.getByTestId('EditableProfileCard.Error.Paragraph')
+    ).toBeInTheDocument()
   })
 
   test('Если ошибок валидации нет то на сервер должен уйти PUT', async () => {
@@ -106,7 +112,6 @@ describe('features/EditableProfileCard', () => {
     ).toBeInTheDocument()
 
     await userEvent.type(screen.getByTestId('ProfileCard.lastname'), 'user')
-
 
     await userEvent.click(
       screen.getByTestId('EditableProfileCardHeader.SaveButton')

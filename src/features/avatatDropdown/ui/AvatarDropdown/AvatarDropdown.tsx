@@ -26,7 +26,7 @@ export const AvatarDropdown = ({ className }: AvatarDropdownProps) => {
     dispatch(userActions.logout())
   }, [dispatch])
 
-  if(!authData) {
+  if (!authData) {
     return null
   }
   return (

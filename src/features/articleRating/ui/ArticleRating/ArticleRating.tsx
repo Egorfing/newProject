@@ -46,7 +46,6 @@ const ArticleRating = ({ className, articleId }: ArticleRatingProps) => {
     handleRateArticle(starsCount)
   }, [handleRateArticle])
 
-
   if (isLoading) {
     return <Skeleton width={'100%'} height={120} />
   }

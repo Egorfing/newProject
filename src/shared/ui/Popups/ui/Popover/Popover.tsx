@@ -19,12 +19,14 @@ export function Popover({
   className,
   children,
   trigger,
-  direction = 'bottom right',
+  direction = 'bottom right'
 }: PopoverProps) {
   const panelClasses = [mapDirectionClass[direction]]
   return (
     <PopoverLib className={classNames('', {}, [className, popupCls.popup])}>
-      <PopoverLib.Button as={'div'} className={popupCls.trigger}>{trigger}</PopoverLib.Button>
+      <PopoverLib.Button as={'div'} className={popupCls.trigger}>
+        {trigger}
+      </PopoverLib.Button>
 
       <PopoverLib.Panel className={classNames(cls.panel, {}, panelClasses)}>
         {children}

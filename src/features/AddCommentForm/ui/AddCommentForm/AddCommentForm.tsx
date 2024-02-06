@@ -20,7 +20,6 @@ import {
   addCommentFormActions,
   addCommentFormReducer
 } from '../../model/slice/addCommentFormSlice'
-import { fetchSendComment } from '../../model/services/sendComment/sendComment'
 import { HStack } from '@/shared/ui/Stack'
 
 export interface AddCommentFormProps {

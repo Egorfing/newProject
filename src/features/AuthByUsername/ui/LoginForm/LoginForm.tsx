@@ -1,11 +1,10 @@
-import { ReduxStoreWithManager } from '@/app/providers/StoreProvider/config/StateSchema'
 import {
   getLoginError,
   getLoginIsLoading,
   getLoginPassword,
   getLoginUsername
 } from '@/features/AuthByUsername/model/selectors/getLoginState/getLoginState'
-import { loginByUsername } from '@/features/AuthByUsername/model/services/loginByUsername/loginByUsername'
+import { loginByUsername } from '../../model/services/loginByUsername/loginByUsername'
 import {
   loginActions,
   loginReducer

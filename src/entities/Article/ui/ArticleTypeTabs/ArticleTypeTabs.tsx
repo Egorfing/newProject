@@ -1,35 +1,50 @@
-import { useMemo } from 'react'
+import { memo, useCallback, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
-import { useSelector } from 'react-redux'
 
-import { getArticlesType } from '@/pages/ArticlesPage/model/selectors/getArticlePageSelectors'
 import { TabItem, Tabs } from '@/shared/ui/Tabs/Tabs'
-import { ArticleType } from '@/entities/Article/model/constants/articleConstants'
+import { ArticleType } from '../../model/constants/articleConstants'
+import { classNames } from '@/shared/lib/classNames/classNames';
 
 interface ArticleTypeTabsProps {
-  className?: string
-  onTypeChange: (newTab: ArticleType) => void
+  className?: string;
+  value: ArticleType;
+  onChangeType: (type: ArticleType) => void;
 }
 
-export const ArticleTypeTabs = ({ className, onTypeChange }: ArticleTypeTabsProps) => {
-  const type = useSelector(getArticlesType)
-  const { t } = useTranslation()
+export const ArticleTypeTabs = memo((props: ArticleTypeTabsProps) => {
+  const { className, value, onChangeType } = props;
+  const { t } = useTranslation();
 
-  const typeTabs = useMemo<Array<TabItem<ArticleType>>>(
-    () => [
-      { value: ArticleType.ALL, content: t('Все статьи') },
-      { value: ArticleType.IT, content: t('Айти') },
-      { value: ArticleType.ECONOMICS, content: t('Экономика') },
-      { value: ArticleType.SCIENCE, content: t('Наука') }
-    ],
-    []
-  )
+  const typeTabs = useMemo<TabItem[]>(() => [
+      {
+          value: ArticleType.ALL,
+          content: t('Все статьи'),
+      },
+      {
+          value: ArticleType.IT,
+          content: t('Айти'),
+      },
+      {
+          value: ArticleType.ECONOMICS,
+          content: t('Экономика'),
+      },
+      {
+          value: ArticleType.SCIENCE,
+          content: t('Наука'),
+      },
+  ], [t]);
+
+  const onTabClick = useCallback((tab: TabItem) => {
+      onChangeType(tab.value as ArticleType);
+  }, [onChangeType]);
+
   return (
-    <Tabs
-      className={className}
-      tabs={typeTabs}
-      value={type}
-      onTabClick={onTypeChange}
-    />
-  )
-}
+      <Tabs
+          tabs={typeTabs}
+          value={value}
+          onTabClick={onTabClick}
+          className={classNames('', {}, [className])}
+      />
+  );
+});
+
