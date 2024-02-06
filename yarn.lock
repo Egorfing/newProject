@@ -7316,10 +7316,10 @@ eslint-plugin-n@^15.7.0:
     resolve "^1.22.1"
     semver "^7.3.8"
 
-eslint-plugin-plugin-imports@^0.0.7:
-  version "0.0.7"
-  resolved "https://registry.npmjs.org/eslint-plugin-plugin-imports/-/eslint-plugin-plugin-imports-0.0.7.tgz"
-  integrity sha512-oxIrVdRh/5qGnE92MeYE3RfurkpAF+ceyEzlFosYCWD93p6o/GqTZOPpNHzRXu7ZxvlRIPsEfarwoKhmKReP1g==
+eslint-plugin-plugin-imports@^0.0.8:
+  version "0.0.8"
+  resolved "https://registry.npmjs.org/eslint-plugin-plugin-imports/-/eslint-plugin-plugin-imports-0.0.8.tgz"
+  integrity sha512-jb2OVKwDQxQqT78o9qw4JPrR/6V+m7GDcFfS3gk4GZs3Vy7EZ1Qax6Wyed3mLcyyKiwBkVKAPuF/XAbO+WvWwA==
   dependencies:
     micromatch "^4.0.5"
     requireindex "^1.2.0"

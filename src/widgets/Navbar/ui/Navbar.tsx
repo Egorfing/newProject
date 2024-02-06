@@ -8,12 +8,12 @@ import { getUserAuthData } from '@/entities/User'
 import { LoginModal } from '@/features/AuthByUsername'
 import { AvatarDropdown } from '@/features/avatatDropdown'
 import { NotificationButton } from '@/features/notificationButton'
-import { RoutePath } from '@/app/providers/router/config/routeConfig'
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink/AppLink'
 import { HStack } from '@/shared/ui/Stack'
 import { Text, TextTheme } from '@/shared/ui/Text/Text'
 import { Button, ThemeButton } from '@/shared/ui/Button/Button'
+import { RoutePath } from '@/shared/const/router'
 interface NavbarProps {
   className?: string
 }

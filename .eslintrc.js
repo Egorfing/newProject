@@ -44,6 +44,10 @@ module.exports = {
       alias: '@',
       testFilesPatterns: ['**/*.test.*', '**/*.story.*', '**/StoreDecorator.tsx']
     }],
+    "plugin-imports/layer-imports": ["error", {
+      alias: '@',
+      ignoreImportPatterns: ['**/StoreProvider', '**/testing']
+    }],
     '@typescript-eslint/no-misused-promises': 'warn',
   },
   globals: {
