@@ -7,7 +7,7 @@ import TiledIcon from '@/shared/assets/icons/TiledIcon.svg'
 import ListIcon from '@/shared/assets/icons/ListIcon.svg'
 import { Button, ThemeButton } from '@/shared/ui/Button/Button'
 import { Icon } from '@/shared/Icon/Icon'
-import { ArticleView } from '../../model/constants/articleConstants'
+import { ArticleView } from '@/entities/Article'
 
 interface ArticleViewSelectorProps {
   className?: string

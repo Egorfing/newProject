@@ -7,9 +7,6 @@ import {
   ArticleSortField,
   ArticleType,
   ArticleView,
-  ArticleViewSelector,
-  ArticleSortSelector,
-  ArticleTypeTabs
 } from '@/entities/Article'
 import { useTranslation } from 'react-i18next'
 import { classNames } from '@/shared/lib/classNames/classNames'
@@ -27,6 +24,9 @@ import {
 } from '../../model/selectors/getArticlePageSelectors'
 import { articlesPageActions } from '../../model/slice/articlesPageSlice'
 import { fetchArticleList } from '../../model/services/fetchArticleList'
+import { ArticleSortSelector } from '@/features/ArticleSortSelector'
+import { ArticleViewSelector } from '@/features/ArticleViewSelector'
+import { ArticleTypeTabs } from '@/features/ArticleTypeTabs'
 
 interface ArticlesPageFiltersProps {
   className?: string
