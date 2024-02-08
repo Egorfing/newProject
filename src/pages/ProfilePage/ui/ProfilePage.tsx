@@ -19,7 +19,7 @@ const ProfilePage = memo(({ className }: ProfilePageProps) => {
     return <Text text={t('Профиль не найден')} />
   }
   return (
-      <Page className={classNames('', {}, [className])}>
+      <Page data-testId='ProfilePage' className={classNames('', {}, [className])}>
         <VStack gap="16" max>
           <EditableProfileCard id={id} />
         </VStack>

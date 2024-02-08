@@ -14,7 +14,7 @@ import {
 } from '../../model/slice/articlesPageSlice'
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect'
-import { SortOrder } from '@/shared/types'
+import { SortOrder } from '@/shared/types/sort'
 import { useTranslation } from 'react-i18next'
 import { Text } from '@/shared/ui/Text/Text'
 
