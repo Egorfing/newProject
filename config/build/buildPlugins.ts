@@ -38,7 +38,6 @@ export function buildPlugins({
       }
     })
   ]
-  
 
   if (isDev) {
     plugins.push(new webpack.HotModuleReplacementPlugin())

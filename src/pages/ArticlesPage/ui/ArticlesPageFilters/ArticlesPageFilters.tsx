@@ -6,7 +6,7 @@ import cls from './ArticlesPageFilters.module.scss'
 import {
   ArticleSortField,
   ArticleType,
-  ArticleView,
+  ArticleView
 } from '@/entities/Article'
 import { useTranslation } from 'react-i18next'
 import { classNames } from '@/shared/lib/classNames/classNames'

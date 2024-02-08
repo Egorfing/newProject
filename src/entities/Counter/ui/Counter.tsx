@@ -4,7 +4,7 @@ import { useCounterActions } from '../model/slice/counterSlice'
 
 export const Counter = () => {
   const counterValue = useCounterValue()
-  const {increment, decrement} = useCounterActions()
+  const { increment, decrement } = useCounterActions()
   const incHandler = () => {
     increment()
   }

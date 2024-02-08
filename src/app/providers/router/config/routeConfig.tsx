@@ -18,7 +18,7 @@ import {
   getRoutArticles,
   getRoutForbidden,
   getRoutMain,
-  getRoutProfile,
+  getRoutProfile
 } from '@/shared/const/router'
 import { AppRouterProps } from '@/shared/types/router'
 

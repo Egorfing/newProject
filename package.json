@@ -25,6 +25,9 @@
     "generate:slice": "node ./scripts/createSlice/index.js",
     "postinstall": "rm -rf ./node_modules/.cache"
   },
+  "lint-staged": {
+    "**/*.{ts,tsx}": "eslint"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -83,6 +86,7 @@
     "jest": "^27.5.1",
     "jest-html-reporters": "^3.1.7",
     "json-server": "^0.17.3",
+    "lint-staged": "^15.2.2",
     "loki": "^0.28.1",
     "mini-css-extract-plugin": "^2.5.3",
     "react-refresh": "^0.14.0",

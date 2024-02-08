@@ -69,7 +69,7 @@ describe('app/providers/router/AppRouter', () => {
       initialState: {
         user: {
           _inited: true,
-          authData: {roles: [UserRole.ADMIN]}
+          authData: { roles: [UserRole.ADMIN] }
         }
       }
     })
