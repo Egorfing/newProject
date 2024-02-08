@@ -12,12 +12,14 @@ import { Avatar } from '@/shared/ui/Avatar/Avatar'
 import { Button, ThemeButton } from '@/shared/ui/Button/Button'
 import { AppLink } from '@/shared/ui/AppLink/AppLink'
 import { getRoutArticleDetails } from '@/shared/const/router'
-import {
-  Article,
-  ArticleTextBlock
-} from '../../model/types/article'
+import { Article, ArticleTextBlock } from '../../model/types/article'
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent'
-import { ArticleBlockType, ArticleView } from '../../model/constants/articleConstants'
+import {
+  ArticleBlockType,
+  ArticleView
+} from '../../model/constants/articleConstants'
+import { AppImage } from '@/shared/ui/AppImage/AppImage'
+import { Skeleton } from '@/shared/ui/Skeleton/Skeleton'
 
 interface ArticleItemProps {
   className?: string
@@ -37,9 +39,6 @@ export const ArticleItem = memo(
         <Text text={String(article.views)} className={cls.views} />
         <Icon Svg={EyeIcon} />
       </>
-    )
-    const img = (
-      <img alt={article.title} src={article.img} className={cls.img} />
     )
 
     const date = <Text text={article.createdAt} className={cls.date} />
@@ -65,7 +64,12 @@ export const ArticleItem = memo(
             </div>
             {title}
             {types}
-            {img}
+            <AppImage
+              alt={article.title}
+              src={article.img}
+              className={cls.img}
+              fallback={<Skeleton width={'100%'} height={250} />}
+            />
             {textBlock && (
               <ArticleTextBlockComponent
                 block={textBlock}
@@ -92,7 +96,12 @@ export const ArticleItem = memo(
       >
         <Card>
           <div className={cls.imageWrapper}>
-            {img}
+            <AppImage
+              alt={article.title}
+              src={article.img}
+              className={cls.img}
+              fallback={<Skeleton width={200} height={200} />}
+            />
             {date}
           </div>
           <div className={cls.infoWrapper}>
