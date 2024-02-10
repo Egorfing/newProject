@@ -50,6 +50,7 @@ export const ArticleItem = memo(
     if (view === ArticleView.BIG) {
       return (
         <div
+          data-testid="ArticleItem"
           className={classNames(cls.ArticleItem, {}, [className, cls[view]])}
         >
           <Card>
@@ -90,6 +91,7 @@ export const ArticleItem = memo(
     }
     return (
       <AppLink
+        data-testid="ArticleItem"
         target={target}
         className={classNames(cls.ArticleItem, {}, [className, cls[view]])}
         to={getRoutArticleDetails(article.id)}

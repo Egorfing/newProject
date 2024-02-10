@@ -31,41 +31,52 @@ const reducers: ReducersList = {
   addCommentForm: addCommentFormReducer
 }
 
-const AddCommentForm = memo(({ className, onSendComment }: AddCommentFormProps) => {
-  const { t } = useTranslation()
-  const dispatch = useAppDispatch()
-  const text = useSelector(getCommentFormText)
-  const error = useSelector(getCommentFormError)
+const AddCommentForm = memo(
+  ({ className, onSendComment }: AddCommentFormProps) => {
+    const { t } = useTranslation()
+    const dispatch = useAppDispatch()
+    const text = useSelector(getCommentFormText)
+    const error = useSelector(getCommentFormError)
 
-  const onCommentTextChange = useCallback(
-    (value: string) => {
-      dispatch(addCommentFormActions.setText(value))
-    },
-    [dispatch]
-  )
+    const onCommentTextChange = useCallback(
+      (value: string) => {
+        dispatch(addCommentFormActions.setText(value))
+      },
+      [dispatch]
+    )
 
-  const onCommentSend = useCallback(
-    () => {
+    const onCommentSend = useCallback(() => {
       if (text) {
         onSendComment(text)
         onCommentTextChange('')
       }
-    },
-    [dispatch, onCommentTextChange, text]
-  )
+    }, [dispatch, onCommentTextChange, text])
 
-  return (
-    <DynamicModuleLoader reducers={reducers}>
-      <HStack justify='between' max className={classNames(cls.AddCommentForm, {}, [className])}>
-        <Input
-          className={cls.input}
-          placeholder={t('Введите текст комментария')}
-          value={text}
-          onChange={onCommentTextChange}
-        />
-        <Button onClick={onCommentSend} theme={ThemeButton.OUTLINE}>{t('Отправить')}</Button>
-      </HStack>
-    </DynamicModuleLoader>
-  )
-})
+    return (
+      <DynamicModuleLoader reducers={reducers}>
+        <HStack
+          data-testid="AddCommentForm"
+          justify="between"
+          max
+          className={classNames(cls.AddCommentForm, {}, [className])}
+        >
+          <Input
+            data-testid="AddCommentForm.Input"
+            className={cls.input}
+            placeholder={t('Введите текст комментария')}
+            value={text}
+            onChange={onCommentTextChange}
+          />
+          <Button
+            data-testid="AddCommentForm.Button"
+            onClick={onCommentSend}
+            theme={ThemeButton.OUTLINE}
+          >
+            {t('Отправить')}
+          </Button>
+        </HStack>
+      </DynamicModuleLoader>
+    )
+  }
+)
 export default AddCommentForm

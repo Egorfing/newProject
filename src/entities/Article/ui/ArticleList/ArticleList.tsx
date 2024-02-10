@@ -49,6 +49,7 @@ export const ArticleList = memo(
     if (!isLoading && articles.length === 0) {
       return (
         <div
+          data-testid="ArticleList"
           className={classNames(cls.ArticleList, {}, [className, cls[view]])}
         >
           <Text size={TextSize.L} title={t('Статьи не найдены')} />
@@ -57,7 +58,10 @@ export const ArticleList = memo(
     }
 
     return (
-      <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
+      <div
+        className={classNames(cls.ArticleList, {}, [className, cls[view]])}
+        data-testid="ArticleList"
+      >
         {articles.length > 0 ? articles.map(renderArticle) : null}
         {isLoading && getSkeletons(view)}
       </div>
