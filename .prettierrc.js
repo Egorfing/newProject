@@ -3,7 +3,11 @@ module.exports = {
   "printWidth": 100,
   "trailingComma": "es5",
   "tabWidth": 2,
-  "semi": false,
-  "trailingComma": "none",
-  "printWidth": 80
-  }
+  "semi": true,
+  "trailingComma": "all",
+  "printWidth": 80,
+  "bracketSpacing": true,
+  "bracketSameLine": false,
+  "arrowParens": "always",
+  "singleAttributePerLine": true
+}

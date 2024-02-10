@@ -10,7 +10,7 @@ module.exports = {
     project: './tsconfig.json',
     tsconfigRootDir: __dirname
   },
-  plugins: ['react', 'i18next', 'react-hooks', 'plugin-imports', 'unused-imports'],
+  plugins: ['react', 'i18next', 'react-hooks', 'plugin-imports', 'unused-imports', 'prettier'],
   rules: {
     "unused-imports/no-unused-imports": "error",
     '@typescript-eslint/space-before-function-paren': 'off',
@@ -50,6 +50,7 @@ module.exports = {
       ignoreImportPatterns: ['**/StoreProvider', '**/testing']
     }],
     '@typescript-eslint/no-misused-promises': 'warn',
+    'react/jsx-max-props-per-line': ['error', { maximum: 3 }]
   },
   globals: {
     __IS_DEV__: true,

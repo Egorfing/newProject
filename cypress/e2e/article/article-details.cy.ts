@@ -28,4 +28,11 @@ describe('Пользователь заходит на страницу со с�
     cy.setRate(2, 'feedback')
     cy.get('[data-selected=true]').should('have.length', 2)
   })
+  it('И оцениваем статью на стабах', () => {
+    cy.intercept('GET', '**/articles/*', {fixture: 'article-details.json'})
+    cy.getByTestId('ArticleDetails.Info').should('exist')
+    cy.getByTestId('RatingCard').scrollIntoView()
+    cy.setRate(2, 'feedback')
+    cy.get('[data-selected=true]').should('have.length', 2)
+  })
 })
