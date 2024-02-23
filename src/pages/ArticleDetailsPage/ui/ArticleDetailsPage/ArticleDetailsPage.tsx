@@ -17,8 +17,8 @@ import { ArticleDetailsComments } from '../ArticleDetailsComments/ArticleDetails
 import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader'
 import { ArticleRating } from '@/features/articleRating'
 import { articleDetailsPageReducer } from '../../model/slice'
-import { getFeatureFlag } from '@/shared/lib/features'
-import { Counter } from '@/entities/Counter'
+import { getFeatureFlag, toggleFeatures } from '@/shared/lib/features'
+import { Card } from '@/shared/ui/Card/Card'
 
 interface ArticleDetailsPageProps {
   className?: string
@@ -28,11 +28,13 @@ const reducers: ReducersList = {
   articlesDetailsPage: articleDetailsPageReducer
 }
 
+const Counter = () => <div>Counter</div>
+const CounterRedesign = () => <div>CounterRedesign</div>
+
 const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
   const { id } = useParams<{ id: string }>()
   const { t } = useTranslation('article-details')
   const isArticleRatingEnabled = getFeatureFlag('isArticleRatingEnabled')
-  const isCounterEnabled = getFeatureFlag('isCounterEnabled')
 
   if (!id) {
     return (
@@ -42,14 +44,19 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
     )
   }
 
+  const articleRatingCard = toggleFeatures({
+    name:'isArticleRatingEnabled',
+    on: () => <ArticleRating articleId={id} />,
+    off: () => <Card>{t('Блок с оценкой скоро появится')}</Card>
+  })
+
   return (
     <DynamicModuleLoader reducers={reducers}>
       <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
         <VStack gap="16" max>
           <ArticleDetailsPageHeader />
           <ArticleDetails id={id} />
-          {isCounterEnabled && <Counter/>}
-          {isArticleRatingEnabled && <ArticleRating articleId={id} />}
+          {articleRatingCard}
           <ArticleRecommendationsList/>
           <ArticleDetailsComments id={id}/>
         </VStack>
